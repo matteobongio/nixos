@@ -125,7 +125,6 @@
     starship
     rustup
     gdb
-    syncthing
     joplin
     nh
     gh
@@ -137,6 +136,12 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })
   ];
+  services.syncthing = {
+    enable = true;
+    user = "matteob";
+    dataDir = "/home/matteob/Documents";    # Default folder for new synced folders
+    configDir = "/home/matteob/.config/syncthing";   # Folder for Syncthing's settings and keys
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

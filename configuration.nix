@@ -9,6 +9,7 @@
       /etc/nixos/hardware-configuration.nix
       ./nvidia.nix
       ./neovim.nix
+      ./games.nix
     ];
 
   # Bootloader.

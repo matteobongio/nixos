@@ -10,6 +10,7 @@
       ./nvidia.nix
       ./neovim.nix
       ./games.nix
+      ./emacs.nix
     ];
 
   # Bootloader.
@@ -113,6 +114,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   neovim.enable = true;
+  emacs.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

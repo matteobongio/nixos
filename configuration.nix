@@ -19,6 +19,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   networking.hostName = "aster-nixos"; # Define your hostname.
+  virtualisation.vmware.host.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

@@ -53,6 +53,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
+  programs.kdeconnect.enable = true;
   programs.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -128,6 +129,9 @@
     joplin
     nh
     gh
+    (calibre.override {
+     unrarSupport = true; #cbr and cbz
+    })
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
@@ -158,6 +162,7 @@
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ]; #syncthing
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 

@@ -7,8 +7,12 @@
     environment.sessionVariables = {
       EDITOR = "nvim";
     };
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+    };
     environment.systemPackages = with pkgs; [
-      neovim
       ripgrep
       wget
       git

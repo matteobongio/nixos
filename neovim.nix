@@ -16,6 +16,7 @@
       unzip
       wl-clipboard #wayland
       xxd
+      fzf
     ];
   };
 }

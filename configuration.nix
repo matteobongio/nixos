@@ -126,12 +126,13 @@
     starship
     rustup
     gdb
-    joplin
+    joplin-desktop
     nh
     gh
     (calibre.override {
      unrarSupport = true; #cbr and cbz
     })
+    discord
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

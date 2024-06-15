@@ -22,6 +22,7 @@
       wl-clipboard #wayland
       xxd
       fzf
+      clang-tools
     ];
   };
 }

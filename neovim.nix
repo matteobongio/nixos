@@ -4,6 +4,7 @@
     neovim.enable = lib.mkEnableOption "enable neovim packages";
   };
   config = lib.mkIf config.neovim.enable {
+    # programs.nix-ld.enable = true; # allow for clangd dynamic linked libraries
     environment.sessionVariables = {
       EDITOR = "nvim";
     };

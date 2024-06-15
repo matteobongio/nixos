@@ -104,6 +104,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
+      kdePackages.kweather
     ];
   };
 
@@ -136,6 +137,7 @@
      unrarSupport = true; #cbr and cbz
     })
     discord
+    texliveFull
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

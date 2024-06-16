@@ -138,6 +138,7 @@
     })
     discord
     texliveFull
+    vulkan-tools
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

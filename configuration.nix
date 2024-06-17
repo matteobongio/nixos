@@ -7,7 +7,7 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      ./nvidia.nix
+      # ./nvidia.nix
       ./neovim.nix
       ./games.nix
       ./emacs.nix
@@ -142,7 +142,7 @@
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
-  hardware.system76.enableAll = true;
+  # hardware.system76.enableAll = true;
   services.system76-scheduler.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })

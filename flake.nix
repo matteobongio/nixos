@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:/matteobongio/nixos-hardware/master";
 
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -10,11 +11,12 @@
     # };
   };
 
-  outputs = { self, nixpkgs, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
     nixosConfigurations.aster-nixos = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        nixos-hardware.nixosModules.system76-gaze18
         # inputs.home-manager.nixosModules.default
       ];
     };

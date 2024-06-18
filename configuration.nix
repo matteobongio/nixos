@@ -7,7 +7,6 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      # ./nvidia.nix
       ./neovim.nix
       ./games.nix
       ./emacs.nix
@@ -131,6 +130,7 @@
     rustup
     gdb
     joplin-desktop
+    protonmail-bridge-gui
     nh
     gh
     (calibre.override {

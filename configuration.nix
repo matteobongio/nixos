@@ -5,8 +5,7 @@
 { config, pkgs, ... }:
 {
   imports =
-    [ # Include the results of the hardware scan.
-      ./hosts/aster-nixos/hardware-configuration.nix
+    [ 
       ./neovim.nix
       ./games.nix
       ./emacs.nix

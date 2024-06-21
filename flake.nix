@@ -16,6 +16,7 @@
       specialArgs = {inherit inputs;};
       modules = [
         ./configuration.nix
+        ./hosts/aster-nixos/hardware-configuration.nix
         nixos-hardware.nixosModules.system76-gaze18
         # inputs.home-manager.nixosModules.default
       ];

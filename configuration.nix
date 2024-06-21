@@ -6,12 +6,12 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./hosts/aster-nixos/hardware-configuration.nix
       ./neovim.nix
       ./games.nix
       ./emacs.nix
     ];
-
+  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -142,7 +142,6 @@
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
-  # hardware.system76.enableAll = true;
   services.system76-scheduler.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })

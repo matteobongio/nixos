@@ -6,9 +6,10 @@
 {
   imports =
     [ 
-      ./neovim.nix
+      ./programming/emacs.nix
+      ./programming/neovim.nix
       ./games.nix
-      ./emacs.nix
+      ./office.nix
     ];
   
   # Bootloader.

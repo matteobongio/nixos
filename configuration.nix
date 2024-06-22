@@ -138,6 +138,8 @@
     discord
     texliveFull
     vulkan-tools
+    yacreader
+    qbittorrent
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

@@ -10,6 +10,7 @@
       ./programming/neovim.nix
       ./games.nix
       ./office.nix
+      ./hyprland.nix
     ];
   
   # Bootloader.
@@ -55,10 +56,6 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
-  programs.hyprland = {
-      enable = true;
-      xwayland.enable = true;
-  };
 
   environment.sessionVariables = {
     # If your cursor becomes invisible

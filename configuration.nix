@@ -125,6 +125,7 @@
     yazi
     starship
     rustup
+    go
     gdb
     joplin-desktop
     protonmail-bridge-gui
@@ -138,6 +139,8 @@
     vulkan-tools
     yacreader
     qbittorrent
+    jetbrains.clion
+    jetbrains.idea-ultimate
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

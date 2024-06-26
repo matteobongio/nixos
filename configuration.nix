@@ -144,7 +144,6 @@
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
-  services.system76-scheduler.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })
   ];

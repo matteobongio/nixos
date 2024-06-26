@@ -36,4 +36,12 @@
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+
+  # my stuff
+  services.system76-scheduler.enable = true;
+  systemd.services."com.system76.PowerDaemon" = {
+    enable = true;
+    wantedBy = [ "multi-user.target" ];
+  };
 }

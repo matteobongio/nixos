@@ -108,6 +108,8 @@
   programs.firefox.enable = true;
   programs.fish.enable = true;
 
+  #bluetooth
+  hardware.bluetooth.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   neovim.enable = true;

@@ -18,6 +18,7 @@
         ./configuration.nix
         ./hosts/aster-nixos/hardware-configuration.nix
         nixos-hardware.nixosModules.system76-gaze18
+        nixos-hardware.nixosModules.common-cpu-intel
         # inputs.home-manager.nixosModules.default
       ];
     };

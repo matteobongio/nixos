@@ -11,12 +11,14 @@
       ./games.nix
       ./office.nix
       ./hyprland.nix
+      ./typst.nix
     ];
-  
+  typst.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  hardware.graphics.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   networking.hostName = "aster-nixos"; # Define your hostname.
@@ -143,6 +145,11 @@
     qbittorrent
     jetbrains.clion
     jetbrains.idea-ultimate
+    mesa-demos
+    mpv
+    nushell
+    unrar
+    bottles
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
@@ -169,7 +176,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 8080 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 ]; #syncthing
   # Or disable the firewall altogether.

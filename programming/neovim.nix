@@ -25,6 +25,7 @@
       xxd
       fzf
       clang-tools
+      nil
     ];
   };
 }

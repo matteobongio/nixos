@@ -150,6 +150,12 @@
     nushell
     unrar
     bottles
+    filezilla
+    rustdesk
+    rhash
+    gparted
+    kdePackages.partitionmanager
+    brave
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

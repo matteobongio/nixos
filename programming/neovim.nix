@@ -26,6 +26,7 @@
       fzf
       clang-tools
       nil
+      gnumake
     ];
   };
 }

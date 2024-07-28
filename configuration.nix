@@ -156,6 +156,7 @@
     gparted
     kdePackages.partitionmanager
     brave
+    godot_4
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

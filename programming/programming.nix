@@ -1,0 +1,25 @@
+{ config, lib, pkgs, ... }:
+{
+  options = {
+    programming.enable = lib.mkEnableOption "enable programming packages";
+  };
+  config = lib.mkIf config.programming.enable {
+    environment.systemPackages = with pkgs; [
+    godot_4
+    jetbrains.clion
+    jetbrains.idea-ultimate
+    gh
+    rustup
+    go
+    gdb
+    kitty
+    eza
+    zoxide
+    bat
+    lazygit
+    yadm
+    yazi
+    starship
+    ];
+  };
+}

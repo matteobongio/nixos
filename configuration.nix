@@ -8,6 +8,7 @@
     [ 
       ./programming/emacs.nix
       ./programming/neovim.nix
+      ./programming/programming.nix
       ./games.nix
       ./office.nix
       ./hyprland.nix
@@ -114,27 +115,16 @@
   hardware.bluetooth.enable = true;
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  programming.enable = true;
   neovim.enable = true;
   emacs.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     thunderbird
-    kitty
-    eza
-    zoxide
-    bat
-    lazygit
-    yadm
-    yazi
-    starship
-    rustup
-    go
-    gdb
     joplin-desktop
     protonmail-bridge-gui
     nh
-    gh
     (calibre.override {
      unrarSupport = true; #cbr and cbz
     })
@@ -143,8 +133,6 @@
     vulkan-tools
     yacreader
     qbittorrent
-    jetbrains.clion
-    jetbrains.idea-ultimate
     mesa-demos
     mpv
     nushell
@@ -156,7 +144,6 @@
     gparted
     kdePackages.partitionmanager
     brave
-    godot_4
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

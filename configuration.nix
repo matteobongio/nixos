@@ -142,8 +142,10 @@
     rustdesk
     rhash
     gparted
+    popsicle
     kdePackages.partitionmanager
     brave
+    pcloud
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

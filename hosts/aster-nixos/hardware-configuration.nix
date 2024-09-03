@@ -46,4 +46,5 @@
     wantedBy = [ "multi-user.target" ];
   };
   hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.open = false;
 }

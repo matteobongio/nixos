@@ -20,6 +20,7 @@
     yadm
     yazi
     starship
+    c3c
     ];
   };
 }

@@ -4,7 +4,7 @@
     waybar
   ];
   programs.hyprland = {
-    enable = true;
+    enable = false;
     xwayland.enable = true;
   };
 }

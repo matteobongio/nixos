@@ -139,7 +139,7 @@
     unrar
     bottles
     filezilla
-    rustdesk
+    rustdesk-flutter
     rhash
     gparted
     popsicle

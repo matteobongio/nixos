@@ -16,6 +16,7 @@
       viAlias = true;
     };
     environment.systemPackages = with pkgs; [
+      neovide
       ripgrep
       wget
       git

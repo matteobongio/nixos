@@ -23,6 +23,7 @@
     c3c
     nil
     lua-language-server
+    valgrind
     ];
   };
 }

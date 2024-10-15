@@ -28,6 +28,7 @@
       clang-tools
       nil
       gnumake
+      nodejs #markdown preview
     ];
   };
 }

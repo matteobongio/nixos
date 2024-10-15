@@ -2,9 +2,16 @@
 {
   environment.systemPackages = with pkgs; [
     waybar
+    font-awesome
+    wofi
+    notify-desktop
+    swaynotificationcenter
+    hyprlock
+    hypridle
+    hyprpaper
   ];
   programs.hyprland = {
-    enable = false;
+    enable = true;
     xwayland.enable = true;
   };
 }

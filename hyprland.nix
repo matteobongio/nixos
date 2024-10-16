@@ -14,6 +14,8 @@
     brightnessctl
     xdg-desktop-portal-hyprland
   ];
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.hyprland.enableGnomeKeyring = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;

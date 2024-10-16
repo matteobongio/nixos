@@ -23,7 +23,7 @@
   nix.settings.experimental-features = [ "nix-command" "flakes"];
 
   networking.hostName = "aster-nixos"; # Define your hostname.
-  virtualisation.vmware.host.enable = true;
+  virtualisation.vmware.host.enable = false;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -75,7 +75,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  services.printing.enable = false;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;

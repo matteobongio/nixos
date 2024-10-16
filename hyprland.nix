@@ -12,6 +12,7 @@
     hyprpaper
     pamixer
     brightnessctl
+    xdg-desktop-portal-hyprland
   ];
   programs.hyprland = {
     enable = true;

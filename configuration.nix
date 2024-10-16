@@ -9,6 +9,7 @@
       ./programming/emacs.nix
       ./programming/neovim.nix
       ./programming/programming.nix
+      ./programming/docker.nix
       ./games.nix
       ./office.nix
       ./hyprland.nix
@@ -116,6 +117,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
   programming.enable = true;
+  docker.enable = true;
   neovim.enable = true;
   emacs.enable = true;
   # List packages installed in system profile. To search, run:

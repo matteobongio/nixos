@@ -61,7 +61,7 @@
       CPU_MAX_PERF_ON_AC = 100;
       
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 40;
+      CPU_MAX_PERF_ON_BAT = 30;
 
       # Turbo Boost
       CPU_BOOST_ON_AC=1;
@@ -75,6 +75,8 @@
       STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
     };
   };
+  powerManagement.enable = true;
+  hardware.nvidia.powerManagement.finegrained = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;
   services.thermald.enable = true;

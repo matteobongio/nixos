@@ -137,7 +137,6 @@
     vulkan-tools
     yacreader
     qbittorrent
-    mesa-demos
     mpv
     nushell
     unrar
@@ -150,6 +149,7 @@
     kdePackages.partitionmanager
     brave
     pcloud
+    spotify
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

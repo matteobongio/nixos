@@ -46,38 +46,50 @@
   #   wantedBy = [ "multi-user.target" ];
   # };
   services.power-profiles-daemon.enable = false;
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
-
-      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-      CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
-
-      PLATFORM_PROFILE_ON_BAT="low-power";
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 30;
-
-      # Turbo Boost
-      CPU_BOOST_ON_AC=1;
-      CPU_BOOST_ON_BAT=0;
-
-      CPU_HWP_DYN_BOOST_ON_AC=1;
-      CPU_HWP_DYN_BOOST_ON_BAT=0;
-
-      #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 50; # 50 and bellow it starts to charge
-      STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    battery = {
+       governor = "powersave";
+       turbo = "never";
+    };
+    charger = {
+       governor = "performance";
+       turbo = "auto";
     };
   };
+  services.tlp = {
+    enable = false;
+    # settings = {
+    #   CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    #   CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+    #
+    #   CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+    #   CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+    #
+    #   # PLATFORM_PROFILE_ON_BAT="low-power";
+    #
+    #   CPU_MIN_PERF_ON_AC = 0;
+    #   CPU_MAX_PERF_ON_AC = 100;
+    #   
+    #   CPU_MIN_PERF_ON_BAT = 0;
+    #   CPU_MAX_PERF_ON_BAT = 30;
+    #
+    #   # Turbo Boost
+    #   CPU_BOOST_ON_AC=1;
+    #   CPU_BOOST_ON_BAT=0;
+    #
+    #   CPU_HWP_DYN_BOOST_ON_AC=1;
+    #   CPU_HWP_DYN_BOOST_ON_BAT=0;
+    #
+    #   #Optional helps save long term battery health
+    #   START_CHARGE_THRESH_BAT0 = 50; # 50 and bellow it starts to charge
+    #   STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+    # };
+  };
   powerManagement.enable = true;
-  hardware.nvidia.powerManagement.finegrained = true;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.open = false;
   services.thermald.enable = true;
+  hardware.nvidia.open = false;
+  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.powerManagement.enable = true;
+  hardware.nvidia.powerManagement.finegrained = true;
 }

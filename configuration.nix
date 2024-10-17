@@ -15,13 +15,15 @@
       ./hyprland.nix
       ./typst.nix
     ];
-  typst.enable = true;
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   hardware.graphics.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes"];
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "aster-nixos"; # Define your hostname.
   virtualisation.vmware.host.enable = false;
@@ -114,8 +116,8 @@
 
   #bluetooth
   hardware.bluetooth.enable = true;
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+
+  typst.enable = true;
   programming.enable = true;
   docker.enable = true;
   neovim.enable = true;

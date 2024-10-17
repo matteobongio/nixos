@@ -9,7 +9,9 @@
     swaynotificationcenter
     hyprlock
     hypridle
-    hyprpaper
+    #hyprpaper
+    swww
+    waypaper
     pamixer
     brightnessctl
     xdg-desktop-portal-hyprland

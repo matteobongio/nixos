@@ -39,8 +39,8 @@
 
 
   # my stuff
-  services.system76-scheduler.enable = true;
-  services.system76-scheduler.useStockConfig = true;
+  # services.system76-scheduler.enable = true;
+  # services.system76-scheduler.useStockConfig = true;
   # systemd.services."com.system76.PowerDaemon" = {
   #   enable = true;
   #   wantedBy = [ "multi-user.target" ];

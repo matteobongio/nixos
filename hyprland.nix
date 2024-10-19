@@ -9,12 +9,15 @@
     swaynotificationcenter
     hyprlock
     hypridle
+    hyprshot
     #hyprpaper
     swww
     waypaper
     pamixer
     brightnessctl
     xdg-desktop-portal-hyprland
+    kdePackages.xdg-desktop-portal-kde
+    dolphin
   ];
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;

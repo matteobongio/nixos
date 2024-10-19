@@ -71,7 +71,7 @@
       CPU_HWP_DYN_BOOST_ON_BAT=0;
 
       #Optional helps save long term battery health
-      START_CHARGE_THRESH_BAT0 = 50; # 50 and bellow it starts to charge
+      START_CHARGE_THRESH_BAT0 = 80; # 50 and bellow it starts to charge
       STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
     };
   };

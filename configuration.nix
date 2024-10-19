@@ -12,7 +12,6 @@
       ./programming/docker.nix
       ./games.nix
       ./office.nix
-      ./hyprland.nix
       ./typst.nix
     ];
   # Bootloader.
@@ -58,9 +57,42 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
   services.displayManager.sddm.wayland.enable = true;
-  # Enable the KDE Plasma Desktop Environment.
+  xdg.portal = {
+    enable = true;
+    config = {
+        common.default = ["kde"];
+      };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-kde
+    ];
+  };
   services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # Enable the KDE Plasma Desktop Environment.
+  specialisation = {
+    plasma.configuration = {
+      services.desktopManager.plasma6.enable = true;
+    };
+    hyprland.configuration = {
+      imports = [
+        ./hyprland.nix
+      ];
+      xdg.portal = {
+        enable = true;
+        config = {
+          hyprland = {
+            default = [
+              "hyprland"
+                "kde"
+            ];
+          };
+        };
+        configPackages = with pkgs; [
+          xdg-desktop-portal-hyprland
+            kdePackages.xdg-desktop-portal-kde
+        ];
+      };
+    };
+  };
   programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {

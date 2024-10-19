@@ -25,6 +25,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
+          home-manager.sharedModules = [{
+            stylix.targets.kde.enable = true;
+          }];
           home-manager.users.matteob = import ./home.nix;
         }
       ];

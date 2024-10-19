@@ -10,6 +10,7 @@
     hyprlock
     hypridle
     hyprshot
+    hyprcursor
     #hyprpaper
     swww
     waypaper
@@ -18,6 +19,8 @@
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
     dolphin
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
     catppuccin-kde
   ];
   services.gnome.gnome-keyring.enable = true;

@@ -13,6 +13,7 @@
       ./games.nix
       ./office.nix
       ./typst.nix
+      ./hyprland.nix
     ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -56,43 +57,46 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
-  services.displayManager.sddm.wayland.enable = true;
-  xdg.portal = {
+  services.greetd = {
     enable = true;
-    config = {
-        common.default = ["kde"];
+    settings = rec {
+      initial_session = {
+        command = "Hyprland";
+        user = "matteob";
       };
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-kde
-    ];
+      default_session = initial_session;
+    };
   };
-  services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm = {
+  #   enable = true;
+  #   settings = {
+  #     AutoLogin = {
+  #       Session = "Hyprland";
+  #       User = "matteob";
+  #     };
+  #   };
+  # };
+  # services.displayManager.sddm.wayland.enable = true;
+  # xdg.portal = {
+  #   enable = true;
+  #   config = {
+  #       common.default = ["kde"];
+  #     };
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-kde
+  #   ];
+  # };
   # Enable the KDE Plasma Desktop Environment.
-  specialisation = {
-    plasma.configuration = {
-      services.desktopManager.plasma6.enable = true;
-    };
-    hyprland.configuration = {
-      imports = [
-        ./hyprland.nix
-      ];
-      xdg.portal = {
-        enable = true;
-        config = {
-          hyprland = {
-            default = [
-              "hyprland"
-                "kde"
-            ];
-          };
-        };
-        configPackages = with pkgs; [
-          xdg-desktop-portal-hyprland
-            kdePackages.xdg-desktop-portal-kde
-        ];
-      };
-    };
-  };
+  # specialisation = {
+  #   plasma.configuration = {
+  #     #services.desktopManager.plasma6.enable = true;
+  #   };
+  #   hyprland.configuration = {
+  #     imports = [
+  #       ./hyprland.nix
+  #     ];
+  #   };
+  # };
   programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {

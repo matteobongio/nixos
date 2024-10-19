@@ -10,7 +10,6 @@
     hyprlock
     hypridle
     hyprshot
-    hyprcursor
     #hyprpaper
     swww
     waypaper
@@ -21,16 +20,24 @@
     dolphin
     kdePackages.kio-fuse
     kdePackages.kio-extras
-    catppuccin-kde
   ];
+  
+
+  stylix = {
+    enable = true;
+    image = pkgs.fetchurl {
+      url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
+      sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
+    };
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  };
+
+
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-  };
-  environment.sessionVariables = {
-    QT_STYLE_OVERRIDE = "catppuccin-kde";
   };
   xdg.portal = {
     enable = true;

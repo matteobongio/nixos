@@ -186,11 +186,13 @@
     brave
     pcloud
     spotify
+    okular
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })
+    font-awesome
   ];
   services.syncthing = {
     enable = true;

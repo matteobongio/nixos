@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     waybar
-    font-awesome
     wofi
     papirus-icon-theme
     notify-desktop
@@ -18,7 +17,10 @@
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
     dolphin
-    catppuccin-kde
+    kdePackages.qtwayland
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    base16-schemes
   ];
   services.gnome.gnome-keyring.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;

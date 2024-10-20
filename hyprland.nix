@@ -20,6 +20,7 @@
     dolphin
     kdePackages.kio-fuse
     kdePackages.kio-extras
+    base16-schemes
   ];
   
 

@@ -26,7 +26,9 @@
           home-manager.backupFileExtension = "backup";
           home-manager.useUserPackages = true;
           home-manager.sharedModules = [{
+            stylix.autoEnable = false;
             stylix.targets.kde.enable = true;
+            stylix.targets.firefox.enable = true;
           }];
           home-manager.users.matteob = import ./home.nix;
         }

@@ -58,7 +58,7 @@
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
   services.greetd = {
-    enable = true;
+    enable = false;
     settings = rec {
       initial_session = {
         command = "Hyprland";
@@ -67,8 +67,7 @@
       default_session = initial_session;
     };
   };
-  # services.displayManager.sddm = {
-  #   enable = true;
+  services.displayManager.sddm.enable = true;
   #   settings = {
   #     AutoLogin = {
   #       Session = "Hyprland";
@@ -76,7 +75,7 @@
   #     };
   #   };
   # };
-  # services.displayManager.sddm.wayland.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   # xdg.portal = {
   #   enable = true;
   #   config = {
@@ -97,6 +96,7 @@
   #     ];
   #   };
   # };
+  services.desktopManager.plasma6.enable = true;
   programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {
@@ -186,11 +186,13 @@
     brave
     pcloud
     spotify
+    okular
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     (nerdfonts.override {fonts = ["FiraCode" ]; })
+    font-awesome
   ];
   services.syncthing = {
     enable = true;

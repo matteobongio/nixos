@@ -2,7 +2,6 @@
 {
   environment.systemPackages = with pkgs; [
     waybar
-    font-awesome
     wofi
     papirus-icon-theme
     notify-desktop

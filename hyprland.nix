@@ -16,6 +16,7 @@
     brightnessctl
     xdg-desktop-portal-hyprland
     kdePackages.xdg-desktop-portal-kde
+    networkmanagerapplet
   ];
   
 

@@ -15,7 +15,7 @@
     pamixer
     brightnessctl
     xdg-desktop-portal-hyprland
-    kdePackages.xdg-desktop-portal-kde
+    xdg-desktop-portal-kde
     networkmanagerapplet
   ];
   security.polkit.enable = true;
@@ -28,7 +28,7 @@
   xdg.portal = {
     enable = true;
     config = {
-      hyprland = {
+      common = {
         default = [
           "hyprland"
           "kde"
@@ -37,7 +37,7 @@
     };
     configPackages = with pkgs; [
       xdg-desktop-portal-hyprland
-      kdePackages.xdg-desktop-portal-kde
+      xdg-desktop-portal-kde
     ];
   };
 }

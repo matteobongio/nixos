@@ -24,6 +24,9 @@
     nil
     lua-language-server
     valgrind
+    #haskell
+    ghc
+    haskell-language-server
     ];
   };
 }

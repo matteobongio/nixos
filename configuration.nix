@@ -189,6 +189,7 @@
     pomodoro-gtk
     distrobox
     dolphin
+    ark
     okular
   ];
   programs.direnv.enable = true;

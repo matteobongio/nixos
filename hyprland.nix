@@ -9,13 +9,10 @@
     hyprlock
     hypridle
     hyprshot
-    #hyprpaper
     swww
     waypaper
     pamixer
     brightnessctl
-    xdg-desktop-portal-hyprland
-    xdg-desktop-portal-kde
     networkmanagerapplet
     polkit_gnome
   ];
@@ -37,24 +34,18 @@
     };
   };
   services.gnome.gnome-keyring.enable = true;
+  services.udisks2.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
   };
-  xdg.portal = {
+   xdg.portal = {
     enable = true;
-    config = {
-      common = {
-        default = [
-          "hyprland"
-          "kde"
-        ];
-      };
-    };
-    configPackages = with pkgs; [
-      xdg-desktop-portal-hyprland
-      xdg-desktop-portal-kde
-    ];
+    config.common.default = "*";
+    # wlr.enable = true;
+    xdgOpenUsePortal = true;
+    extraPortals =
+      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
   };
 }

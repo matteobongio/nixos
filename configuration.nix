@@ -96,8 +96,8 @@
   #     ];
   #   };
   # };
-  services.desktopManager.plasma6.enable = true;
-  programs.kdeconnect.enable = true;
+  # services.desktopManager.plasma6.enable = true;
+  # programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -186,6 +186,9 @@
     brave
     pcloud
     spotify
+    pomodoro-gtk
+    distrobox
+    dolphin
     okular
   ];
   programs.direnv.enable = true;

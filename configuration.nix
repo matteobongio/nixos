@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-stable, ... }:
 {
   imports =
     [ 
@@ -163,7 +163,7 @@
   environment.systemPackages = with pkgs; [
     thunderbird
     joplin-desktop
-    protonmail-bridge-gui
+    pkgs-stable.protonmail-bridge-gui
     nh
     (calibre.override {
      unrarSupport = true; #cbr and cbz
@@ -186,11 +186,12 @@
     brave
     pcloud
     spotify
-    pomodoro-gtk
+    pkgs-stable.pomodoro-gtk
     distrobox
     dolphin
     ark
     okular
+    plasma-systemmonitor
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

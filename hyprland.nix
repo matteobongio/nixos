@@ -15,11 +15,28 @@
     brightnessctl
     networkmanagerapplet
     polkit_gnome
+    kdePackages.kio-extras
+    catppuccin-gtk
+    (catppuccin-kvantum.override {
+        accent = "lavender";
+        variant = "macchiato";
+      })
+    themechanger
+    qt6ct
+    libsForQt5.qt5ct
+    libsForQt5.qt5.qtwayland
+    kdePackages.qtwayland
+    kdePackages.qtstyleplugin-kvantum
   ];
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM="wayland";
+    QT_QPA_PLATFORMTHEME="kvantum";
+  };
   security.polkit.enable = true;
 # environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
+      enable = true;
       description = "polkit-gnome-authentication-agent-1";
       wantedBy = [ "graphical-session.target" ];
       wants = [ "graphical-session.target" ];

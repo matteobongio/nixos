@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/5633bcff0c6162b9e4b5f1264264611e950c8ec7";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -11,10 +12,17 @@
     # stylix.url = "github:danth/stylix";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs: {
-    nixosConfigurations.aster-nixos = nixpkgs.lib.nixosSystem {
+  outputs = { self, nixpkgs, nixos-hardware, nixpkgs-stable, ... }@inputs: {
+    nixosConfigurations.aster-nixos = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
-      specialArgs = {inherit inputs;};
+      specialArgs = {
+          pkgs-stable = import nixpkgs-stable {
+            # Refer to the `system` parameter from
+            # the outer scope recursively
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
       modules = [
         ./configuration.nix
         ./hosts/aster-nixos/hardware-configuration.nix

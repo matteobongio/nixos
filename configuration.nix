@@ -105,6 +105,7 @@
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
     FLAKE = "/home/matteob/nixos";
+    GSK_RENDERER="gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
   };
 
   # Configure keymap in X11

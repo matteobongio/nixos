@@ -6,6 +6,7 @@
   environment.systemPackages = with pkgs; [
     mangohud
     protonup
+    prismlauncher
   ];
 
   programs.gamemode.enable = true;

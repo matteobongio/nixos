@@ -193,6 +193,7 @@
     ark
     okular
     plasma-systemmonitor
+    signal-desktop
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

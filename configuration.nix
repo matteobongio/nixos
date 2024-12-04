@@ -194,6 +194,7 @@
     okular
     plasma-systemmonitor
     signal-desktop
+    planify
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

@@ -12,11 +12,11 @@
     swww
     waypaper
     pamixer
+    pwvucontrol
     brightnessctl
     networkmanagerapplet
     polkit_gnome
     kdePackages.kio-extras
-    catppuccin-gtk
     (catppuccin-kvantum.override {
         accent = "lavender";
         variant = "macchiato";
@@ -39,9 +39,9 @@
     user.services.polkit-gnome-authentication-agent-1 = {
       enable = true;
       description = "polkit-gnome-authentication-agent-1";
-      # wantedBy = [ "graphical-session.target" ];
-      # wants = [ "graphical-session.target" ];
-      # after = [ "graphical-session.target" ];
+      wantedBy = [ "graphical-session.target" ];
+      wants = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -51,6 +51,7 @@
       };
     };
   };
+  programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
   security.pam.services.hyprland.enableGnomeKeyring = true;

@@ -195,11 +195,12 @@
     plasma-systemmonitor
     signal-desktop
     planify
+    kdePackages.gwenview
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["FiraCode" ]; })
+    nerd-fonts.fira-code
     font-awesome
   ];
   services.syncthing = {

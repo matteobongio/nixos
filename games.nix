@@ -10,6 +10,7 @@
     protonup
     prismlauncher
     heroic
+    melonDS
   ];
 
   environment.sessionVariables = {

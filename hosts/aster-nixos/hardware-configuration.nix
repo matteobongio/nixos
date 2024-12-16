@@ -58,7 +58,7 @@
       PLATFORM_PROFILE_ON_BAT="low-power";
 
       CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
+      CPU_MAX_PERF_ON_AC = 90;
       
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 30;

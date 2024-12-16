@@ -18,7 +18,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  virtualisation.waydroid.enable = false;
   hardware.graphics.enable = true;
 
   nix.settings.experimental-features = [ "nix-command" "flakes"];
@@ -57,8 +57,9 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
+  security.pam.services.greetd.enableGnomeKeyring = true;
   services.greetd = {
-    enable = false;
+    enable = true;
     settings = rec {
       initial_session = {
         command = "Hyprland";
@@ -67,24 +68,8 @@
       default_session = initial_session;
     };
   };
-  services.displayManager.sddm.enable = true;
-  #   settings = {
-  #     AutoLogin = {
-  #       Session = "Hyprland";
-  #       User = "matteob";
-  #     };
-  #   };
-  # };
-  services.displayManager.sddm.wayland.enable = true;
-  # xdg.portal = {
-  #   enable = true;
-  #   config = {
-  #       common.default = ["kde"];
-  #     };
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-kde
-  #   ];
-  # };
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
   # Enable the KDE Plasma Desktop Environment.
   # specialisation = {
   #   plasma.configuration = {
@@ -170,6 +155,7 @@
      unrarSupport = true; #cbr and cbz
     })
     discord
+    kget
     texliveFull
     vulkan-tools
     yacreader

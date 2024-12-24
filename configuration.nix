@@ -138,6 +138,7 @@
 
   #bluetooth
   hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   typst.enable = true;
   programming.enable = true;
@@ -182,6 +183,9 @@
     signal-desktop
     planify
     kdePackages.gwenview
+    qdirstat
+    krita
+    gimp
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

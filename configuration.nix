@@ -103,7 +103,7 @@
   services.printing.enable = false;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -137,8 +137,8 @@
   programs.fish.enable = true;
 
   #bluetooth
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
+  hardware.bluetooth.enable = false;
+  services.blueman.enable = false;
 
   typst.enable = true;
   programming.enable = true;

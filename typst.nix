@@ -6,7 +6,6 @@
   config = lib.mkIf config.neovim.enable {
     environment.systemPackages = with pkgs; [
     typst
-    typst-lsp
     tinymist
     # typst-preview #remove?
     ];

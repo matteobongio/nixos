@@ -11,6 +11,7 @@
     prismlauncher
     heroic
     melonDS
+    gzdoom
   ];
 
   environment.sessionVariables = {

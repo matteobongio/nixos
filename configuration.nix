@@ -177,6 +177,7 @@
     pkgs-stable.pomodoro-gtk
     distrobox
     kdePackages.dolphin
+    kdePackages.kdegraphics-thumbnailers
     kdePackages.ark
     kdePackages.okular
     kdePackages.plasma-systemmonitor

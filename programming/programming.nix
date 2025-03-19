@@ -12,6 +12,7 @@
     rustup
     go
     gdb
+    gdbgui
     kitty
     eza
     zoxide

@@ -156,7 +156,7 @@
      unrarSupport = true; #cbr and cbz
     })
     discord
-    kget
+    kdePackages.kget
     texliveFull
     vulkan-tools
     yacreader
@@ -176,16 +176,17 @@
     spotify
     pkgs-stable.pomodoro-gtk
     distrobox
-    dolphin
-    ark
-    okular
-    plasma-systemmonitor
+    kdePackages.dolphin
+    kdePackages.ark
+    kdePackages.okular
+    kdePackages.plasma-systemmonitor
     signal-desktop
     planify
     kdePackages.gwenview
     qdirstat
     krita
     gimp
+    obsidian
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

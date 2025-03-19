@@ -80,4 +80,6 @@
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = false;
   services.thermald.enable = true;
+  programs.coolercontrol.enable = true;
+  programs.coolercontrol.nvidiaSupport = true;
 }

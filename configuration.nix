@@ -82,7 +82,7 @@
   #   };
   # };
   # services.desktopManager.plasma6.enable = true;
-  # programs.kdeconnect.enable = true;
+  programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -103,7 +103,7 @@
   services.printing.enable = false;
 
   # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
+  # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -166,7 +166,7 @@
     unrar
     bottles
     filezilla
-    rustdesk-flutter
+    pkgs-stable.rustdesk-flutter
     rhash
     gparted
     popsicle
@@ -177,6 +177,7 @@
     pkgs-stable.pomodoro-gtk
     distrobox
     kdePackages.dolphin
+    kdePackages.kservice
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ark
     kdePackages.okular
@@ -184,15 +185,19 @@
     signal-desktop
     planify
     kdePackages.gwenview
+    kdePackages.kimageformats
+    libheif
     qdirstat
     krita
     gimp
     obsidian
+    wonderdraft
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
+    # nerd-fonts.fira-code
+    fira-code-nerdfont
     font-awesome
   ];
   services.syncthing = {

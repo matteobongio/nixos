@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-stable, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   imports =
     [ 
@@ -150,7 +150,7 @@
   environment.systemPackages = with pkgs; [
     thunderbird
     joplin-desktop
-    pkgs-stable.protonmail-bridge-gui
+    protonmail-bridge-gui
     nh
     (calibre.override {
      unrarSupport = true; #cbr and cbz
@@ -166,7 +166,7 @@
     unrar
     bottles
     filezilla
-    pkgs-stable.rustdesk-flutter
+    rustdesk-flutter
     rhash
     gparted
     popsicle
@@ -174,7 +174,7 @@
     brave
     pcloud
     spotify
-    pkgs-stable.pomodoro-gtk
+    pomodoro-gtk
     distrobox
     kdePackages.dolphin
     kdePackages.kservice

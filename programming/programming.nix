@@ -1,4 +1,4 @@
-{ config, lib, pkgs, pkgs-24-11,  ... }:
+{ config, lib, pkgs, ... }:
 {
   options = {
     programming.enable = lib.mkEnableOption "enable programming packages";
@@ -29,7 +29,7 @@
     ghc
     haskell-language-server
 
-    pkgs-24-11.gitkraken
+    gitkraken
     ];
   };
 }

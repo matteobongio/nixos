@@ -28,7 +28,7 @@
     #haskell
     ghc
     haskell-language-server
-
+    alejandra
     gitkraken
     ];
   };

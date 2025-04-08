@@ -176,7 +176,7 @@
     spotify
     pomodoro-gtk
     distrobox
-    kdePackages.dolphin
+    pkgs-unstable.kdePackages.dolphin
     kdePackages.kservice
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ark

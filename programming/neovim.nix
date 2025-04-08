@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, pkgs-unstable, ... }:
 {
   options = {
     neovim.enable = lib.mkEnableOption "enable neovim packages";
@@ -16,7 +16,7 @@
       viAlias = true;
     };
     environment.systemPackages = with pkgs; [
-      neovide
+      pkgs-unstable.neovide
       ripgrep
       wget
       git

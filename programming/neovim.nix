@@ -14,9 +14,10 @@
       enable = true;
       defaultEditor = true;
       viAlias = true;
+      package = pkgs-unstable.neovim-unwrapped;
     };
     environment.systemPackages = with pkgs; [
-      pkgs-unstable.neovide
+      neovide
       ripgrep
       wget
       git

@@ -192,6 +192,7 @@
     gimp
     obsidian
     wonderdraft
+    soulseekqt
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

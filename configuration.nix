@@ -151,6 +151,7 @@
     thunderbird
     joplin-desktop
     protonmail-bridge-gui
+    protonvpn-gui
     nh
     (calibre.override {
      unrarSupport = true; #cbr and cbz

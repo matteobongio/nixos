@@ -5,6 +5,8 @@
   };
   config = lib.mkIf config.programming.enable {
     environment.systemPackages = with pkgs; [
+    git
+    delta
     godot_4
     jetbrains.clion
     jetbrains.idea-ultimate

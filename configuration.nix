@@ -194,6 +194,7 @@
     obsidian
     wonderdraft
     soulseekqt
+    strawberry-qt6
   ];
   programs.direnv.enable = true;
   services.flatpak.enable = true;

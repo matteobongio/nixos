@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, pkgs, pkgs-old, pkgs-unstable, ... }:
 {
   imports =
     [ 
@@ -153,7 +153,7 @@
     protonmail-bridge-gui
     protonvpn-gui
     nh
-    (calibre.override {
+    (pkgs-old.calibre.override {
      unrarSupport = true; #cbr and cbz
     })
     discord
@@ -184,7 +184,7 @@
     kdePackages.okular
     kdePackages.plasma-systemmonitor
     signal-desktop
-    planify
+    pkgs-old.planify
     kdePackages.gwenview
     kdePackages.kimageformats
     libheif
@@ -199,8 +199,8 @@
   programs.direnv.enable = true;
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
-    # nerd-fonts.fira-code
-    fira-code-nerdfont
+    nerd-fonts.fira-code
+    # fira-code-nerdfont
     font-awesome
   ];
   services.syncthing = {

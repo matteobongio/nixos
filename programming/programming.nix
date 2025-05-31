@@ -16,6 +16,7 @@
     gdb
     gdbgui
     kitty
+    fastfetch
     eza
     zoxide
     bat

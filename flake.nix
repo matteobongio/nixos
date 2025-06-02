@@ -52,6 +52,7 @@
       modules = [
         ./configuration.nix
         ./hosts/aster-nixos/hardware-configuration.nix
+        ./hosts/aster-nixos/general.nix
         nixos-hardware.nixosModules.system76-gaze18
         nixos-hardware.nixosModules.common-cpu-intel
         # stylix.nixosModules.stylix

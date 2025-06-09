@@ -1,8 +1,11 @@
-{ config, lib, pkgs, ... }: 
-let 
-  portals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
-in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  portals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
+in {
   environment.systemPackages = with pkgs; [
     waybar
     wofi
@@ -21,9 +24,9 @@ in
     polkit_gnome
     kdePackages.kio-extras
     (catppuccin-kvantum.override {
-        accent = "lavender";
-        variant = "macchiato";
-      })
+      accent = "lavender";
+      variant = "macchiato";
+    })
     themechanger
     nwg-look
     qt6ct
@@ -33,18 +36,18 @@ in
     kdePackages.qtstyleplugin-kvantum
   ];
   environment.sessionVariables = {
-    QT_QPA_PLATFORM="wayland";
-    QT_QPA_PLATFORMTHEME="kvantum";
+    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORMTHEME = "kvantum";
   };
   security.polkit.enable = true;
-# environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
+  # environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
       enable = true;
       description = "polkit-gnome-authentication-agent-1";
-      wantedBy = [ "graphical-session.target" ];
-      wants = [ "graphical-session.target" ];
-      after = [ "graphical-session.target" ];
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
       serviceConfig = {
         Type = "simple";
         ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -63,7 +66,7 @@ in
     xwayland.enable = true;
   };
   programs.hyprlock.enable = true;
-   xdg.portal = {
+  xdg.portal = {
     enable = true;
     config.common.default = "*";
     # wlr.enable = true;

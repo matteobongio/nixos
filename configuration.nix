@@ -1,22 +1,25 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, pkgs-old, pkgs-unstable, ... }:
 {
-  imports =
-    [ 
-      ./programming/emacs.nix
-      ./programming/neovim.nix
-      ./programming/programming.nix
-      ./programming/docker.nix
-      ./games.nix
-      ./office.nix
-      ./typst.nix
-      ./hyprland.nix
-    ];
+  config,
+  pkgs,
+  pkgs-old,
+  pkgs-unstable,
+  ...
+}: {
+  imports = [
+    ./programming/emacs.nix
+    ./programming/neovim.nix
+    ./programming/programming.nix
+    ./programming/docker.nix
+    ./games.nix
+    ./office.nix
+    ./typst.nix
+    ./hyprland.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -66,7 +69,7 @@
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
     NH_FLAKE = "/home/matteob/nixos";
-    GSK_RENDERER="gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
+    GSK_RENDERER = "gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
   };
 
   # Configure keymap in X11
@@ -98,7 +101,7 @@
   users.users.matteob = {
     isNormalUser = true;
     description = "Matteo Bongiovanni";
-    extraGroups = [ "networkmanager" "wheel" "input"];
+    extraGroups = ["networkmanager" "wheel" "input"];
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.kweather
@@ -122,9 +125,9 @@
     joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
-    
+
     (pkgs-old.calibre.override {
-     unrarSupport = true; #cbr and cbz
+      unrarSupport = true; #cbr and cbz
     })
     discord
     kdePackages.kget
@@ -176,8 +179,8 @@
   services.syncthing = {
     enable = true;
     user = "matteob";
-    dataDir = "/home/matteob/Documents";    # Default folder for new synced folders
-    configDir = "/home/matteob/.config/syncthing";   # Folder for Syncthing's settings and keys
+    dataDir = "/home/matteob/Documents"; # Default folder for new synced folders
+    configDir = "/home/matteob/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -193,9 +196,9 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 8080 ];
+  networking.firewall.allowedTCPPorts = [8080];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ]; #syncthing
+  networking.firewall.allowedUDPPorts = [22000 21027]; #syncthing
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 }

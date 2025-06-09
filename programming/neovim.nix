@@ -1,20 +1,27 @@
-{ config, lib, pkgs, pkgs-unstable, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  pkgs-unstable,
+  ...
+}:
 # TODO: delete when https://github.com/NixOS/nixpkgs/issues/402998 is closed
 let
   nvim = pkgs-unstable.neovim-unwrapped.overrideAttrs (old: {
-    meta = old.meta or { } // {
-      maintainers = [ ];
-    };
+    meta =
+      old.meta or {}
+      // {
+        maintainers = [];
+      };
   });
-in
-{
+in {
   options = {
     neovim.enable = lib.mkEnableOption "enable neovim packages";
   };
   config = lib.mkIf config.neovim.enable {
     programs.nix-ld.enable = true; # allow for clangd dynamic linked libraries
     programs.nix-ld.package = pkgs.nix-ld-rs;
-    programs.nix-ld.libraries = with pkgs; [ stdenv.cc.cc ];
+    programs.nix-ld.libraries = with pkgs; [stdenv.cc.cc];
     environment.sessionVariables = {
       EDITOR = "nvim";
     };
@@ -35,9 +42,13 @@ in
       xxd
       fzf
       clang-tools
-      nil
       gnumake
       nodejs #markdown preview
+
+      #lsp
+      nil
+      lua-language-server
+      haskell-language-server
     ];
   };
 }

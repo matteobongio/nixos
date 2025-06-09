@@ -108,6 +108,7 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.fish.enable = true;
+  programs.nh.enable = true;
 
   typst.enable = true;
   programming.enable = true;
@@ -121,7 +122,7 @@
     joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
-    nh
+    
     (pkgs-old.calibre.override {
      unrarSupport = true; #cbr and cbz
     })

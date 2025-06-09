@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }: 
+let 
+  portals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+in
 {
   environment.systemPackages = with pkgs; [
     waybar
@@ -6,10 +9,10 @@
     papirus-icon-theme
     notify-desktop
     swaynotificationcenter
-    hyprlock
     hypridle
     hyprshot
     swww
+    eww
     waypaper
     pamixer
     pwvucontrol
@@ -59,12 +62,12 @@
     enable = true;
     xwayland.enable = true;
   };
+  programs.hyprlock.enable = true;
    xdg.portal = {
     enable = true;
     config.common.default = "*";
     # wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals =
-      [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = portals;
   };
 }

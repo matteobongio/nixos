@@ -6,7 +6,7 @@
     nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11"; # "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    dolphin-overlay = { 
+    dolphin-overlay = {
       url = "github:rumboon/dolphin-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
@@ -30,8 +30,6 @@
       system = "x86_64-linux";
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
-          # Refer to the `system` parameter from
-          # the outer scope recursively
           inherit system;
           config.allowUnfree = true;
           overlays = [
@@ -39,15 +37,13 @@
           ];
         };
         pkgs = import nixpkgs {
-          # Refer to the `system` parameter from
-          # the outer scope recursively
           inherit system;
           config.allowUnfree = true;
         };
         pkgs-old = import nixpkgs-old {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          inherit system;
+          config.allowUnfree = true;
+        };
       };
       modules = [
         ./configuration.nix

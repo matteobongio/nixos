@@ -81,7 +81,7 @@
   powerManagement.enable = true;
   hardware.nvidia.powerManagement.finegrained = true;
   hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.open = false;
+  hardware.nvidia.open = true;
   services.thermald.enable = true;
   programs.coolercontrol.enable = true;
   programs.coolercontrol.nvidiaSupport = true;

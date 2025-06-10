@@ -12,6 +12,7 @@
       kitty
       fastfetch
       eza
+      fd
       zoxide
       bat
       yadm

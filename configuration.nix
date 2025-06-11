@@ -122,7 +122,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     thunderbird
-    joplin-desktop
+    pkgs-unstable.joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
 
@@ -167,9 +167,13 @@
     obsidian
     wonderdraft
     soulseekqt
-    strawberry-qt6
+    pkgs-unstable.strawberry-qt6
   ];
-  programs.direnv.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code

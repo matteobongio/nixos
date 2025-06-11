@@ -16,7 +16,7 @@
     ./games.nix
     ./office.nix
     ./typst.nix
-    ./hyprland.nix
+    ./WM/general.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

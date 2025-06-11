@@ -5,7 +5,12 @@
   ...
 }: let
   portals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
-in {
+in 
+{
+  imports = [
+    ./hyprland.nix
+    # ./niri.nix
+  ];
   environment.systemPackages = with pkgs; [
     waybar
     wofi
@@ -35,11 +40,14 @@ in {
     kdePackages.qtwayland
     kdePackages.qtstyleplugin-kvantum
   ];
+
   environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
     QT_QPA_PLATFORMTHEME = "kvantum";
   };
+
   security.polkit.enable = true;
+
   # environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
   systemd = {
     user.services.polkit-gnome-authentication-agent-1 = {
@@ -57,15 +65,13 @@ in {
       };
     };
   };
+
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  
   programs.hyprlock.enable = true;
+  
   xdg.portal = {
     enable = true;
     config.common.default = "*";

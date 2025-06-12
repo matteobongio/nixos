@@ -5,11 +5,10 @@
   ...
 }: let
   portals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
-in 
-{
+in {
   imports = [
     ./hyprland.nix
-    # ./niri.nix
+    ./niri.nix
   ];
   environment.systemPackages = with pkgs; [
     waybar
@@ -69,9 +68,9 @@ in
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
-  
+
   programs.hyprlock.enable = true;
-  
+
   xdg.portal = {
     enable = true;
     config.common.default = "*";

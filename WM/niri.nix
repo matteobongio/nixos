@@ -3,10 +3,7 @@
   lib,
   pkgs,
   ...
-}: 
-let
-in
-{
+}: {
   programs.niri.enable = true;
-  security.pam.services.hyprland.enableGnomeKeyring = true;
+  security.pam.services.niri.enableGnomeKeyring = true;
 }

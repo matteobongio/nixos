@@ -13,6 +13,7 @@
     mangohud
     protonup
     prismlauncher
+    lutris
     heroic
     melonDS
     gzdoom

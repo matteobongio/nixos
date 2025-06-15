@@ -10,6 +10,7 @@
       url = "github:rumboon/dolphin-overlay";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+    go2pkg.url = "github:matteobongio/go2";
     # home-manager = {
     #   url = "github:nix-community/home-manager";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -24,6 +25,7 @@
     nixpkgs-unstable,
     nixos-hardware,
     dolphin-overlay,
+    go2pkg,
     ...
   } @ inputs: {
     nixosConfigurations.aster-nixos = nixpkgs.lib.nixosSystem rec {
@@ -51,6 +53,14 @@
         ./hosts/aster-nixos/general.nix
         nixos-hardware.nixosModules.system76-gaze18
         nixos-hardware.nixosModules.common-cpu-intel
+
+        {
+          environment.systemPackages = [
+              go2pkg.packages.${system}.default
+            ];
+        }
+
+
         # stylix.nixosModules.stylix
         # home-manager.nixosModules.home-manager {
         #   home-manager.useGlobalPkgs = true;

@@ -36,19 +36,19 @@
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
   services.xserver.enable = false;
-  security.pam.services.greetd.enableGnomeKeyring = true;
-  services.greetd = {
-    enable = true;
-    settings = rec {
-      initial_session = {
-        command = "Hyprland";
-        user = "matteob";
-      };
-      default_session = initial_session;
-    };
-  };
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+  # security.pam.services.greetd.enableGnomeKeyring = true;
+  # services.greetd = {
+  #   enable = true;
+  #   settings = rec {
+  #     initial_session = {
+  #       command = "Hyprland";
+  #       user = "matteob";
+  #     };
+  #     default_session = initial_session;
+  #   };
+  # };
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   # Enable the KDE Plasma Desktop Environment.
   # specialisation = {
   #   plasma.configuration = {

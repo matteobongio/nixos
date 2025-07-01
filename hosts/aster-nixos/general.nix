@@ -5,6 +5,9 @@
   pkgs-unstable,
   ...
 }: {
+  imports = [
+    ./print.nix
+  ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -35,8 +38,7 @@
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;
 
-  # Enable CUPS to print documents.
-  services.printing.enable = false;
+  print.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

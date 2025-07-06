@@ -26,6 +26,10 @@ in {
     brightnessctl
     networkmanagerapplet
     polkit_gnome
+    kdePackages.kio
+    kdePackages.kio-fuse
+    kdePackages.kio-admin
+    kdePackages.kio-gdrive
     kdePackages.kio-extras
     (catppuccin-kvantum.override {
       accent = "lavender";

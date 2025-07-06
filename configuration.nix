@@ -169,6 +169,7 @@
     soulseekqt
     pkgs-unstable.strawberry-qt6
   ];
+  services.gvfs.enable = true; #enable mtp
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;

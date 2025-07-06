@@ -46,7 +46,7 @@ in {
 
   environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "kvantum";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   security.polkit.enable = true;

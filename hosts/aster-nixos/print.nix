@@ -11,7 +11,13 @@
   };
   config = lib.mkIf config.print.enable {
     # Enable CUPS to print documents.
-    services.printing.enable = true;
+    services.printing = {
+      enable = true;
+      drivers = with pkgs; [ 
+        hplip
+        hplipWithPlugin
+      ];
+    };
     services.avahi = {
       enable = true;
       nssmdns4 = true;

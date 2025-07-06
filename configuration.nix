@@ -168,6 +168,7 @@
     wonderdraft
     soulseekqt
     pkgs-unstable.strawberry-qt6
+    handbrake
   ];
   services.gvfs.enable = true; #enable mtp
   programs.direnv = {

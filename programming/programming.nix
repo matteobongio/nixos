@@ -25,6 +25,7 @@
       gdbgui
       lazygit
       valgrind
+      jq
 
       godot_4
       jetbrains.clion

@@ -16,7 +16,6 @@
     ./games.nix
     ./office.nix
     ./typst.nix
-    ./WM/general.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -68,7 +67,6 @@
     #WLR_NO_HARDWARE_CURSORS = "1";
     # Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
-    NH_FLAKE = "/home/matteob/nixos";
     GSK_RENDERER = "gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
   };
 
@@ -111,7 +109,10 @@
   # Install firefox.
   programs.firefox.enable = true;
   programs.fish.enable = true;
-  programs.nh.enable = true;
+  programs.nh = {
+    flake = "/home/matteob/nixos";
+    enable = true;
+  };
 
   typst.enable = true;
   programming.enable = true;

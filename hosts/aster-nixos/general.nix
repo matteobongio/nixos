@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./print.nix
+    ../../WM/general.nix
   ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

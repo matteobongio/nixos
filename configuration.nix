@@ -126,14 +126,13 @@
     pkgs-unstable.joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
-
     (pkgs-old.calibre.override {
       unrarSupport = true; #cbr and cbz
     })
     discord
     kdePackages.kget
     texliveFull
-    vulkan-tools
+    vulkan-tools #TODO:
     yacreader
     qbittorrent
     mpv
@@ -148,19 +147,11 @@
     kdePackages.partitionmanager
     brave
     pcloud
-    spotify
+    spotify #TODO:
     pomodoro-gtk
     distrobox
-    pkgs-unstable.kdePackages.dolphin
-    kdePackages.kservice
-    kdePackages.kdegraphics-thumbnailers
-    kdePackages.ark
-    kdePackages.okular
-    kdePackages.plasma-systemmonitor
     signal-desktop
     pkgs-old.planify
-    kdePackages.gwenview
-    kdePackages.kimageformats
     libheif
     qdirstat
     krita
@@ -171,7 +162,6 @@
     pkgs-unstable.strawberry-qt6
     handbrake
   ];
-  services.gvfs.enable = true; #enable mtp
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
@@ -180,7 +170,6 @@
   services.flatpak.enable = true;
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
-    # fira-code-nerdfont
     font-awesome
   ];
   services.syncthing = {
@@ -201,11 +190,4 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [8080 5173 9999];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  networking.firewall.allowedUDPPorts = [22000 21027]; #syncthing
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 }

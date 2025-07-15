@@ -7,13 +7,13 @@
   ...
 }: {
   options = {
-      print.enable = lib.mkEnableOption "enable printing support";
+    print.enable = lib.mkEnableOption "enable printing support";
   };
   config = lib.mkIf config.print.enable {
     # Enable CUPS to print documents.
     services.printing = {
       enable = true;
-      drivers = with pkgs; [ 
+      drivers = with pkgs; [
         hplip
         hplipWithPlugin
       ];

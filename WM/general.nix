@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-unstable,
   ...
 }: let
   portals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
@@ -31,6 +32,14 @@ in {
     kdePackages.kio-admin
     kdePackages.kio-gdrive
     kdePackages.kio-extras
+    pkgs-unstable.kdePackages.dolphin
+    kdePackages.kservice
+    kdePackages.kdegraphics-thumbnailers
+    kdePackages.ark
+    kdePackages.okular
+    kdePackages.plasma-systemmonitor
+    kdePackages.gwenview
+    kdePackages.kimageformats
     (catppuccin-kvantum.override {
       accent = "lavender";
       variant = "macchiato";
@@ -72,6 +81,7 @@ in {
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
+  services.gvfs.enable = true; #enable mtp
 
   programs.hyprlock.enable = true;
 

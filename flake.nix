@@ -63,6 +63,7 @@
         ];
       };
     };
+    #nixos-rebuild switch --flake .#nixos-gaming
     nixos-gaming = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = {

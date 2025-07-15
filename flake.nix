@@ -28,15 +28,47 @@
     go2pkg,
     ...
   } @ inputs: {
-    nixosConfigurations.aster-nixos = nixpkgs.lib.nixosSystem rec {
+    nixosConfigurations = {
+      aster-nixos = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+            overlays = [
+              dolphin-overlay.overlays.default
+            ];
+          };
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          pkgs-old = import nixpkgs-old {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
+        modules = [
+          ./configuration.nix
+          ./hosts/aster-nixos/hardware-configuration.nix
+          ./hosts/aster-nixos/general.nix
+          nixos-hardware.nixosModules.system76-gaze18
+          nixos-hardware.nixosModules.common-cpu-intel
+
+          {
+            environment.systemPackages = [
+              go2pkg.packages.${system}.default
+            ];
+          }
+        ];
+      };
+    };
+    nixos-gaming = nixpkgs.lib.nixosSystem rec {
       system = "x86_64-linux";
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
-          overlays = [
-            dolphin-overlay.overlays.default
-          ];
         };
         pkgs = import nixpkgs {
           inherit system;
@@ -49,30 +81,6 @@
       };
       modules = [
         ./configuration.nix
-        ./hosts/aster-nixos/hardware-configuration.nix
-        ./hosts/aster-nixos/general.nix
-        nixos-hardware.nixosModules.system76-gaze18
-        nixos-hardware.nixosModules.common-cpu-intel
-
-        {
-          environment.systemPackages = [
-              go2pkg.packages.${system}.default
-            ];
-        }
-
-
-        # stylix.nixosModules.stylix
-        # home-manager.nixosModules.home-manager {
-        #   home-manager.useGlobalPkgs = true;
-        #   home-manager.backupFileExtension = "backup";
-        #   home-manager.useUserPackages = true;
-        #   home-manager.sharedModules = [{
-        #     stylix.autoEnable = false;
-        #     stylix.targets.kde.enable = true;
-        #     stylix.targets.firefox.enable = true;
-        #   }];
-        #   home-manager.users.matteob = import ./home.nix;
-        # }
       ];
     };
   };

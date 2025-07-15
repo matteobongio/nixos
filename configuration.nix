@@ -202,7 +202,7 @@
   # services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [8080];
+  networking.firewall.allowedTCPPorts = [8080 5173 9999];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.allowedUDPPorts = [22000 21027]; #syncthing
   # Or disable the firewall altogether.

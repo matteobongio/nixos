@@ -82,6 +82,7 @@
       };
       modules = [
         ./configuration.nix
+        ./hosts/gaming/general.nix
       ];
     };
   };

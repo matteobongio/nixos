@@ -78,6 +78,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    extraConfig.pipewire = {
+      "qobuz" = {
+        "context.properties" = {
+          "default.clock.allowed-rates" = [44100 48000 88200 96000 176400 192000];
+        };
+      };
+    };
     # If you want to use JACK applications, uncomment this
     #jack.enable = true;
 

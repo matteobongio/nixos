@@ -29,8 +29,13 @@
     LC_TIME = "fr_BE.UTF-8";
   };
 
-  services.jellyfin = {
-    enable = true;
+  services = {
+    jellyfin = {
+      enable = true;
+    };
+    sonarr = {
+      enable = true;
+    };
   };
   environment.systemPackages = with pkgs; [
     jellyfin-media-player

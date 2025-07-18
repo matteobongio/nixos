@@ -37,7 +37,9 @@ in {
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ark
     kdePackages.okular
-    kdePackages.plasma-systemmonitor
+    # kdePackages.plasma-systemmonitor
+    # kdePackages.ksystemstats
+    gnome-system-monitor
     kdePackages.gwenview
     kdePackages.kimageformats
     (catppuccin-kvantum.override {

@@ -32,12 +32,13 @@
   };
   fileSystems."/mnt/E" = {
     device = "/dev/sdb1";
-    fsType = "ntfs-3g";
+    fsType = "btrfs";
     options = [
-      "rw"
-      "uid=1000"
+      "defaults"
       "users"
       "nofail"
+      "compress=zstd"
+      "autodefrag"
     ];
   };
 

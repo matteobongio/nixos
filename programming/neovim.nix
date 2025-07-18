@@ -32,6 +32,7 @@ in {
       package = nvim;
     };
     environment.systemPackages = with pkgs; [
+      tree-sitter
       neovide
       ripgrep
       wget

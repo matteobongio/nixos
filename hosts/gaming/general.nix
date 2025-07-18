@@ -20,18 +20,8 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  fileSystems."/mnt/D" = {
-    device = "/dev/sda2";
-    fsType = "ntfs-3g";
-    options = [
-      "rw"
-      "uid=1000"
-      "users"
-      "nofail"
-    ];
-  };
   fileSystems."/mnt/E" = {
-    device = "/dev/sdb1";
+    device = "/dev/sda1";
     fsType = "btrfs";
     options = [
       "defaults"
@@ -39,6 +29,17 @@
       "nofail"
       "compress=zstd"
       "autodefrag"
+    ];
+  };
+
+  fileSystems."/mnt/D" = {
+    device = "/dev/sdb1";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "users"
+      "nofail"
     ];
   };
 

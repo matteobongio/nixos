@@ -14,11 +14,32 @@
 
   #nvidia
   hardware.graphics.enable = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = true;
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  fileSystems."/mnt/D" = {
+    device = "/dev/sda2";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "users"
+      "nofail"
+    ];
+  };
+  fileSystems."/mnt/E" = {
+    device = "/dev/sdb1";
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "users"
+      "nofail"
+    ];
+  };
 
   services.desktopManager.plasma6.enable = true;
 

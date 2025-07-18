@@ -34,7 +34,11 @@
     LC_TELEPHONE = "fr_BE.UTF-8";
     LC_TIME = "fr_BE.UTF-8";
   };
-
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
   #bluetooth
   hardware.bluetooth.enable = false;
   services.blueman.enable = false;

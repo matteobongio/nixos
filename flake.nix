@@ -62,28 +62,28 @@
           }
         ];
       };
-    };
-    #nixos-rebuild switch --flake .#nixos-gaming
-    nixos-gaming = nixpkgs.lib.nixosSystem rec {
-      system = "x86_64-linux";
-      specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
-          config.allowUnfree = true;
+      #nixos-rebuild boot --flake .#nixos-gaming
+      nixos-gaming = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = {
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          pkgs = import nixpkgs {
+            inherit system;
+            config.allowUnfree = true;
+          };
+          pkgs-old = import nixpkgs-old {
+            inherit system;
+            config.allowUnfree = true;
+          };
         };
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-        };
-        pkgs-old = import nixpkgs-old {
-          inherit system;
-          config.allowUnfree = true;
-        };
+        modules = [
+          ./configuration.nix
+          ./hosts/gaming/general.nix
+        ];
       };
-      modules = [
-        ./configuration.nix
-        ./hosts/gaming/general.nix
-      ];
     };
   };
 }

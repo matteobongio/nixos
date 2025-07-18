@@ -70,12 +70,6 @@
     GSK_RENDERER = "gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
   };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -157,7 +151,7 @@
     krita
     gimp
     obsidian
-    wonderdraft
+    #wonderdraft
     soulseekqt
     pkgs-unstable.strawberry-qt6
     handbrake

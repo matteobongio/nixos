@@ -21,7 +21,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/mnt/E" = {
-    device = "/dev/sda1";
+    device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";
     fsType = "btrfs";
     options = [
       "defaults"
@@ -33,7 +33,7 @@
   };
 
   fileSystems."/mnt/D" = {
-    device = "/dev/sdb1";
+    device = "/dev/disk/by-uuid/6A1CD7C81CD78D87";
     fsType = "ntfs-3g";
     options = [
       "rw"

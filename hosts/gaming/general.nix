@@ -14,6 +14,7 @@
 
   #nvidia
   hardware.graphics.enable = true;
+  hardware.graphics.enable32Bit = true;
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.open = true;
 
@@ -25,7 +26,6 @@
     fsType = "btrfs";
     options = [
       "defaults"
-      "users"
       "nofail"
       "compress=zstd"
       "autodefrag"
@@ -33,13 +33,13 @@
   };
 
   fileSystems."/mnt/D" = {
-    device = "/dev/disk/by-uuid/6A1CD7C81CD78D87";
-    fsType = "ntfs-3g";
+    device = "/dev/disk/by-uuid/e1dad93f-07c6-414c-ab7a-479defa2a672";
+    fsType = "btrfs";
     options = [
-      "rw"
-      "uid=1000"
-      "users"
+      "defaults"
       "nofail"
+      "compress=zstd"
+      "autodefrag"
     ];
   };
 

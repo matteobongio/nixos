@@ -84,7 +84,13 @@
     };
     sonarr = {
       enable = true;
+      user = "matteob";
+      dataDir = "/home/matteob/.config/NzbDrone";
     };
+    prowlarr = {
+      enable = true;
+    };
+    flaresolverr.enable = true;
   };
   environment.systemPackages = with pkgs; [
     suwayomi-server

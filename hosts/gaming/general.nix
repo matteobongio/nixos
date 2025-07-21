@@ -42,7 +42,12 @@
       "autodefrag"
     ];
   };
-
+  services.displayManager.sddm.settings = {
+    Autologin = {
+      Session = "plasma.desktop";
+      User = "matteob";
+    };
+  };
   services.desktopManager.plasma6.enable = true;
 
   networking.hostName = "nixos-gaming"; # Define your hostname.
@@ -82,6 +87,7 @@
     };
   };
   environment.systemPackages = with pkgs; [
+    suwayomi-server
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
@@ -90,7 +96,14 @@
   ];
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [8080 5173 9999];
+  networking.firewall.allowedTCPPorts = [
+    8080 
+    5173 
+
+    9999
+
+    4567 #suwayomi
+  ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.allowedUDPPorts = [22000 21027]; #syncthing
   # Or disable the firewall altogether.

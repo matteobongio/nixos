@@ -48,18 +48,7 @@
   # };
   services.displayManager.sddm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  # Enable the KDE Plasma Desktop Environment.
-  # specialisation = {
-  #   plasma.configuration = {
-  #     #services.desktopManager.plasma6.enable = true;
-  #   };
-  #   hyprland.configuration = {
-  #     imports = [
-  #       ./hyprland.nix
-  #     ];
-  #   };
-  # };
-  # services.desktopManager.plasma6.enable = true;
+
   programs.kdeconnect.enable = true;
 
   environment.sessionVariables = {

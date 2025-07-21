@@ -78,6 +78,7 @@
 
   # Configure console keymap
   console.keyMap = "it2";
+
   services = {
     jellyfin = {
       enable = true;
@@ -92,6 +93,7 @@
     };
     flaresolverr.enable = true;
   };
+
   environment.systemPackages = with pkgs; [
     suwayomi-server
     jellyfin
@@ -121,6 +123,17 @@
         icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
       })
   ];
+
+  systemd.user.services.suwayomi = {
+    enable = true;
+    after = [ "network.target" ];
+    wantedBy = [ "default.target" ];
+    description = "suwayomi server";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''"${pkgs.suwayomi-server}/bin/tachidesk-server"'';
+    };
+  };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [

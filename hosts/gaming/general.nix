@@ -42,12 +42,12 @@
       "autodefrag"
     ];
   };
-  services.displayManager.sddm.settings = {
-    Autologin = {
-      Session = "plasma.desktop";
-      User = "matteob";
-    };
-  };
+  # services.displayManager.sddm.settings = {
+  #   Autologin = {
+  #     Session = "plasma.desktop";
+  #     User = "matteob";
+  #   };
+  # };
   services.desktopManager.plasma6.enable = true;
 
   networking.hostName = "nixos-gaming"; # Define your hostname.

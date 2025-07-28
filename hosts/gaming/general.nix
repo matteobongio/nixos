@@ -31,6 +31,7 @@
       "compress=zstd"
       "autodefrag"
     ];
+    depends = "/";
   };
 
   fileSystems."/mnt/D" = {
@@ -42,6 +43,7 @@
       "compress=zstd"
       "autodefrag"
     ];
+    depends = "/";
   };
   # services.displayManager.sddm.settings = {
   #   Autologin = {

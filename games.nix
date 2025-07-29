@@ -13,7 +13,7 @@
     mangohud
     protonup
     prismlauncher
-    lutris
+    #lutris
     heroic
     melonDS
     gzdoom

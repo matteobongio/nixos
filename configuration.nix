@@ -147,7 +147,7 @@
     obsidian
     #wonderdraft
     soulseekqt
-    pkgs-unstable.strawberry-qt6
+    pkgs-unstable.strawberry
     handbrake
   ];
   programs.direnv = {

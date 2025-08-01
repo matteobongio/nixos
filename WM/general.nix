@@ -47,6 +47,7 @@ in {
       variant = "macchiato";
     })
     kdePackages.breeze
+    kdePackages.breeze-gtk
     themechanger
     nwg-look
     qt6ct

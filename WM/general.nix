@@ -46,6 +46,7 @@ in {
       accent = "lavender";
       variant = "macchiato";
     })
+    kdePackages.breeze
     themechanger
     nwg-look
     qt6ct

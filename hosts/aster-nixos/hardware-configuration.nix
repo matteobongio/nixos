@@ -13,8 +13,10 @@
   ];
 
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
-  boot.initrd.kernelModules = ["nvidia" "i915" "nvidia_modeset" "nvidia_drm" "coretemp"];
-  boot.kernelModules = ["kvm-intel" "nvidia-drm.fbdev=1"];
+  # boot.initrd.kernelModules = ["nvidia" "i915" "nvidia_modeset" "nvidia_drm" "coretemp"];
+  boot.kernelModules = ["kvm-intel"
+  # "nvidia-drm.fbdev=1"
+  ];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
@@ -80,14 +82,35 @@
   };
   powerManagement.enable = true;
   services.upower.enable = true;
-  hardware.nvidia.powerManagement.finegrained = true;
-  hardware.nvidia.modesetting.enable = true;
-  hardware.nvidia.open = true;
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
+
+  services.xserver.videoDrivers = [
+    "modesetting"
+    "nvidia"
+  ];
+
+  hardware.nvidia = {
+    powerManagement.finegrained = true;
+    prime = {
+      offload.enable = true;
+      offload.enableOffloadCmd = true;
+      intelBusId = "PCI:0:2:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
+    open = true;
+  };
+
+
+  # hardware.nvidia.modesetting.enable = true;
+  # hardware.graphics.extraPackages = with pkgs; [
+  #   rocmPackages.clr
+  # ];
+
   services.thermald.enable = true;
   programs.coolercontrol.enable = true;
   programs.coolercontrol.nvidiaSupport = true;
-  hardware.graphics.enable32Bit = true;  
-  hardware.graphics.extraPackages = with pkgs; [
-    rocmPackages.clr
-  ];
 }

@@ -79,10 +79,15 @@
     };
   };
   powerManagement.enable = true;
+  services.upower.enable = true;
   hardware.nvidia.powerManagement.finegrained = true;
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.open = true;
   services.thermald.enable = true;
   programs.coolercontrol.enable = true;
   programs.coolercontrol.nvidiaSupport = true;
+  hardware.graphics.enable32Bit = true;  
+  hardware.graphics.extraPackages = with pkgs; [
+    rocmPackages.clr
+  ];
 }

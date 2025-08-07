@@ -10,6 +10,7 @@ in {
   imports = [
     ./hyprland.nix
     ./niri.nix
+    ./dolphin.nix
   ];
   environment.systemPackages = with pkgs; [
     waybar
@@ -27,16 +28,6 @@ in {
     brightnessctl
     networkmanagerapplet
     polkit_gnome
-    kdePackages.kio
-    kdePackages.kio-fuse
-    kdePackages.kio-admin
-    kdePackages.kio-gdrive
-    kdePackages.kio-extras
-    pkgs-unstable.kdePackages.dolphin
-    kdePackages.kservice
-    kdePackages.kdegraphics-thumbnailers
-    kdePackages.ark
-    kdePackages.okular
     # kdePackages.plasma-systemmonitor
     # kdePackages.ksystemstats
     gnome-system-monitor

@@ -40,8 +40,8 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1754381502,
-        "narHash": "sha256-kf/zAHrLIjMzlDgfuSkLVdsV/JcJ7IQQphOz5SEKQzs=",
+        "lastModified": 1754496189,
+        "narHash": "sha256-OrxonS3nllbuxvjsMJ679vmf7Welaa2KcOtJW13PneQ=",
         "path": "/home/matteob/nixos-hardware",
         "type": "path"
       },

@@ -36,9 +36,6 @@
           pkgs-unstable = import nixpkgs-unstable {
             inherit system;
             config.allowUnfree = true;
-            overlays = [
-              dolphin-overlay.overlays.default
-            ];
           };
           pkgs = import nixpkgs {
             inherit system;

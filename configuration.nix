@@ -135,7 +135,6 @@
     kdePackages.partitionmanager
     brave
     pcloud
-    spotify #TODO:
     pomodoro-gtk
     distrobox
     signal-desktop

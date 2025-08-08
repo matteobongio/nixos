@@ -7,10 +7,6 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "path:/home/matteob/nixos-hardware";
-    dolphin-overlay = {
-      url = "github:rumboon/dolphin-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
     go2pkg.url = "github:matteobongio/go2";
     # home-manager = {
     #   url = "github:nix-community/home-manager";
@@ -25,7 +21,6 @@
     nixpkgs-old,
     nixpkgs-unstable,
     nixos-hardware,
-    dolphin-overlay,
     go2pkg,
     ...
   } @ inputs: {

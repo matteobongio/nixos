@@ -21,18 +21,15 @@
   } @ inputs: 
   let
     system = "x86_64-linux";
-    pkgsUnstable = import nixpkgs-unstable {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgsStable = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
-    pkgsOld = import nixpkgs-old {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    mkPkgs = pkgs: (
+        import pkgs {
+            inherit system;
+            config.allowUnfree = true;
+          }
+      );
+    pkgsUnstable = mkPkgs nixpkgs-unstable;
+    pkgsStable = mkPkgs nixpkgs;
+    pkgsOld = mkPkgs nixpkgs-old;
   in
   {
     nixosConfigurations = {

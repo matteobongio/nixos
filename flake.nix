@@ -18,20 +18,18 @@
     nixos-hardware,
     go2pkg,
     ...
-  } @ inputs: 
-  let
+  } @ inputs: let
     system = "x86_64-linux";
     mkPkgs = pkgs: (
-        import pkgs {
-            inherit system;
-            config.allowUnfree = true;
-          }
-      );
+      import pkgs {
+        inherit system;
+        config.allowUnfree = true;
+      }
+    );
     pkgsUnstable = mkPkgs nixpkgs-unstable;
     pkgsStable = mkPkgs nixpkgs;
     pkgsOld = mkPkgs nixpkgs-old;
-  in
-  {
+  in {
     nixosConfigurations = {
       aster-nixos = nixpkgs.lib.nixosSystem rec {
         inherit system;

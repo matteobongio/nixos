@@ -15,11 +15,11 @@
   boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "nvme" "usb_storage" "sd_mod" "sdhci_pci"];
   boot.initrd.kernelModules = [
     "nvidia_drm"
-     # "i915" "nvidia"  "nvidia_modeset" "coretemp"
+    # "i915" "nvidia"  "nvidia_modeset" "coretemp"
   ];
   boot.kernelModules = [
     "kvm-intel"
-  # "nvidia-drm.fbdev=1"
+    # "nvidia-drm.fbdev=1"
   ];
   boot.extraModulePackages = [];
 

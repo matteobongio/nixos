@@ -31,7 +31,7 @@
       "compress=zstd"
       "autodefrag"
     ];
-    depends = [ "/" ];
+    depends = ["/"];
   };
 
   fileSystems."/mnt/D" = {
@@ -43,7 +43,7 @@
       "compress=zstd"
       "autodefrag"
     ];
-    depends = [ "/" ];
+    depends = ["/"];
   };
   # services.displayManager.sddm.settings = {
   #   Autologin = {
@@ -105,32 +105,32 @@
     jellyfin-media-player
     bitwarden
     (pkgs.makeDesktopItem {
-        name = "sonarr-desktop";
-        type = "Link";
-        desktopName = "sonarr";
-        url = "http://localhost:8989";
-        icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-      })
+      name = "sonarr-desktop";
+      type = "Link";
+      desktopName = "sonarr";
+      url = "http://localhost:8989";
+      icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
+    })
     (pkgs.makeDesktopItem {
-        name = "prowlarr-desktop";
-        type = "Link";
-        desktopName = "prowlarr";
-        url = "http://localhost:9696";
-        icon = "${pkgs.prowlarr}/share/prowlarr-1.36.3.5071/UI/Content/Images/logo.svg";
-      })
+      name = "prowlarr-desktop";
+      type = "Link";
+      desktopName = "prowlarr";
+      url = "http://localhost:9696";
+      icon = "${pkgs.prowlarr}/share/prowlarr-1.36.3.5071/UI/Content/Images/logo.svg";
+    })
     (pkgs.makeDesktopItem {
-        name = "suwayomi-desktop";
-        type = "Link";
-        desktopName = "suwayomi";
-        url = "http://localhost:4567";
-        icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-      })
+      name = "suwayomi-desktop";
+      type = "Link";
+      desktopName = "suwayomi";
+      url = "http://localhost:4567";
+      icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
+    })
   ];
 
   systemd.user.services.suwayomi = {
     enable = true;
-    after = [ "network.target" ];
-    wantedBy = [ "default.target" ];
+    after = ["network.target"];
+    wantedBy = ["default.target"];
     description = "suwayomi server";
     serviceConfig = {
       Type = "simple";
@@ -140,8 +140,8 @@
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
-    8080 
-    5173 
+    8080
+    5173
 
     9999
 

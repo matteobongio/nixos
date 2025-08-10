@@ -8,11 +8,6 @@
     # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixos-hardware.url = "path:/home/matteob/nixos-hardware";
     go2pkg.url = "github:matteobongio/go2";
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    # stylix.url = "github:danth/stylix";
   };
 
   outputs = {
@@ -23,23 +18,30 @@
     nixos-hardware,
     go2pkg,
     ...
-  } @ inputs: {
+  } @ inputs: 
+  let
+    system = "x86_64-linux";
+    pkgsUnstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgsStable = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    pkgsOld = import nixpkgs-old {
+      inherit system;
+      config.allowUnfree = true;
+    };
+  in
+  {
     nixosConfigurations = {
       aster-nixos = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        inherit system;
+        pkgs = pkgsStable;
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          pkgs-old = import nixpkgs-old {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          pkgs-unstable = pkgsUnstable;
+          pkgs-old = pkgsOld;
         };
         modules = [
           ./configuration.nix
@@ -57,20 +59,11 @@
       };
       #nixos-rebuild boot --flake .#nixos-gaming
       nixos-gaming = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        inherit system;
+        pkgs = pkgsStable;
         specialArgs = {
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-          pkgs-old = import nixpkgs-old {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          pkgs-unstable = pkgsUnstable;
+          pkgs-old = pkgsOld;
         };
         modules = [
           ./configuration.nix

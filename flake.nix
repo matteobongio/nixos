@@ -2,11 +2,10 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; # "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11"; # "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; 
+    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11"; 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixos-hardware.url = "path:/home/matteob/nixos-hardware";
+    nixos-hardware.url = "path:/home/matteob/nixos-hardware"; # "github:NixOS/nixos-hardware/master";
     go2pkg.url = "github:matteobongio/go2";
   };
 
@@ -43,7 +42,6 @@
         ./hosts/aster-nixos/hardware-configuration.nix
         ./hosts/aster-nixos/general.nix
         nixos-hardware.nixosModules.system76-gaze18
-        # nixos-hardware.nixosModules.common-cpu-intel
 
         {
           environment.systemPackages = [

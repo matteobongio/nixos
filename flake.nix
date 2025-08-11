@@ -26,45 +26,36 @@
         config.allowUnfree = true;
       }
     );
-    pkgsUnstable = mkPkgs nixpkgs-unstable;
-    pkgsStable = mkPkgs nixpkgs;
-    pkgsOld = mkPkgs nixpkgs-old;
+    mkSystem = modules: (
+      nixpkgs.lib.nixosSystem rec {
+        inherit system modules;
+        pkgs = mkPkgs nixpkgs;
+        specialArgs = {
+          pkgs-unstable = mkPkgs nixpkgs-unstable;
+          pkgs-old = mkPkgs nixpkgs-old;
+        };
+      }
+    );
   in {
     nixosConfigurations = {
-      aster-nixos = nixpkgs.lib.nixosSystem rec {
-        inherit system;
-        pkgs = pkgsStable;
-        specialArgs = {
-          pkgs-unstable = pkgsUnstable;
-          pkgs-old = pkgsOld;
-        };
-        modules = [
-          ./configuration.nix
-          ./hosts/aster-nixos/hardware-configuration.nix
-          ./hosts/aster-nixos/general.nix
-          nixos-hardware.nixosModules.system76-gaze18
-          # nixos-hardware.nixosModules.common-cpu-intel
+      aster-nixos = mkSystem [
+        ./configuration.nix
+        ./hosts/aster-nixos/hardware-configuration.nix
+        ./hosts/aster-nixos/general.nix
+        nixos-hardware.nixosModules.system76-gaze18
+        # nixos-hardware.nixosModules.common-cpu-intel
 
-          {
-            environment.systemPackages = [
-              go2pkg.packages.${system}.default
-            ];
-          }
-        ];
-      };
+        {
+          environment.systemPackages = [
+            go2pkg.packages.${system}.default
+          ];
+        }
+      ];
       #nixos-rebuild boot --flake .#nixos-gaming
-      nixos-gaming = nixpkgs.lib.nixosSystem rec {
-        inherit system;
-        pkgs = pkgsStable;
-        specialArgs = {
-          pkgs-unstable = pkgsUnstable;
-          pkgs-old = pkgsOld;
-        };
-        modules = [
-          ./configuration.nix
-          ./hosts/gaming/general.nix
-        ];
-      };
+      nixos-gaming = mkSystem [
+        ./configuration.nix
+        ./hosts/gaming/general.nix
+      ];
     };
   };
 }

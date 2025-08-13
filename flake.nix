@@ -2,8 +2,8 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; 
-    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11"; 
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "path:/home/matteob/nixos-hardware"; # "github:NixOS/nixos-hardware/master";
     go2pkg.url = "github:matteobongio/go2";
@@ -53,6 +53,12 @@
       nixos-gaming = mkSystem [
         ./configuration.nix
         ./hosts/gaming/general.nix
+      ];
+      aster-lab-iso = mkSystem [
+        ({ pkgs, modulesPath, ... }: {
+            imports = [ (modulesPath + "/installer/cd-dvd/installation-cd-minimal.nix") ];
+          })
+        ./hosts/aster-lab/installer.nix
       ];
     };
   };

@@ -26,6 +26,7 @@
       lazygit
       valgrind
       jq
+      just
 
       godot_4
       jetbrains.clion

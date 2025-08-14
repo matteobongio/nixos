@@ -22,7 +22,6 @@
   # Allow unfree packages
   # nixpkgs.config.allowUnfree = true;
 
-  virtualisation.vmware.host.enable = false;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary

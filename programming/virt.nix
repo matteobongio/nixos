@@ -14,5 +14,11 @@
     virtualisation.spiceUSBRedirection.enable = true;
     # virtualisation.vmware.host.enable = false;
     # virtualisation.waydroid.enable = false;
+    services.spice-vdagentd.enable = true;
+    environment.systemPackages = with pkgs; [
+      quickemu
+      qemu
+      spice-gtk
+    ];
   };
 }

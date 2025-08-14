@@ -8,6 +8,7 @@
   imports = [
     ./print.nix
     ../../WM/general.nix
+    ./../../programming/virt.nix
   ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -44,6 +45,8 @@
   services.blueman.enable = false;
 
   print.enable = true;
+
+  virt.enable = true;
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [8080 5173 9998 9999];

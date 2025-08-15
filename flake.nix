@@ -36,6 +36,7 @@
       }
     );
   in {
+    packages.${system}.aster-lab-iso = self.nixosConfigurations.aster-lab-iso.config.system.build.isoImage;
     nixosConfigurations = {
       aster-nixos = mkSystem [
         ./configuration.nix
@@ -53,6 +54,9 @@
       nixos-gaming = mkSystem [
         ./configuration.nix
         ./hosts/gaming/general.nix
+      ];
+      aster-lab = mkSystem [
+        ./hosts/aster-lab/general.nix
       ];
       aster-lab-iso = mkSystem [
         ({ pkgs, modulesPath, ... }: {

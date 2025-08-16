@@ -104,28 +104,28 @@
     jellyfin-ffmpeg
     jellyfin-media-player
     bitwarden
-    (pkgs.makeDesktopItem {
+  ];
+
+  xdg.desktopEntries = {
+    "sonarr-desktop" = {
       name = "sonarr-desktop";
       type = "Link";
-      desktopName = "sonarr";
       url = "http://localhost:8989";
       icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-    })
-    (pkgs.makeDesktopItem {
+    };
+    "prowlarr-desktop" = {
       name = "prowlarr-desktop";
       type = "Link";
-      desktopName = "prowlarr";
       url = "http://localhost:9696";
       icon = "${pkgs.prowlarr}/share/prowlarr-1.36.3.5071/UI/Content/Images/logo.svg";
-    })
-    (pkgs.makeDesktopItem {
+    };
+     "suwayomi-desktop" = {
       name = "suwayomi-desktop";
       type = "Link";
-      desktopName = "suwayomi";
       url = "http://localhost:4567";
       icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-    })
-  ];
+    };
+  };
 
   systemd.user.services.suwayomi = {
     enable = true;

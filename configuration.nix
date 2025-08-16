@@ -158,6 +158,8 @@
     nerd-fonts.fira-code
     font-awesome
   ];
+  programs.appimage.enable = true;
+  programs.appimage.binfmt = true;
   services.syncthing = {
     enable = true;
     user = "matteob";

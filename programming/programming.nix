@@ -13,6 +13,7 @@
       fastfetch
       eza
       fd
+      television
       zoxide
       bat
       yadm

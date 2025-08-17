@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-    nixpkgs-old.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "path:/home/matteob/nixos-hardware"; # "github:NixOS/nixos-hardware/master";
     go2pkg.url = "github:matteobongio/go2";
@@ -12,7 +11,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-old,
     nixpkgs-unstable,
     nixos-hardware,
     go2pkg,
@@ -31,7 +29,6 @@
         pkgs = mkPkgs nixpkgs;
         specialArgs = {
           pkgs-unstable = mkPkgs nixpkgs-unstable;
-          pkgs-old = mkPkgs nixpkgs-old;
         };
       }
     );

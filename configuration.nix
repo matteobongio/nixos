@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  pkgs-old,
   pkgs-unstable,
   ...
 }: {
@@ -113,7 +112,7 @@
     pkgs-unstable.joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
-    (pkgs-old.calibre.override {
+    (pkgs-unstable.calibre.override {
       unrarSupport = true; #cbr and cbz
     })
     discord
@@ -137,7 +136,7 @@
     pomodoro-gtk
     distrobox
     signal-desktop
-    pkgs-old.planify
+    planify
     libheif
     qdirstat
     krita

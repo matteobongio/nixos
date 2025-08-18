@@ -146,6 +146,7 @@
     soulseekqt
     pkgs-unstable.strawberry
     handbrake
+    tor-browser
   ];
   programs.direnv = {
     enable = true;

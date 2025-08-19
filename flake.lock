@@ -20,14 +20,18 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1754496189,
-        "narHash": "sha256-OrxonS3nllbuxvjsMJ679vmf7Welaa2KcOtJW13PneQ=",
-        "path": "/home/matteob/nixos-hardware",
-        "type": "path"
+        "lastModified": 1755610045,
+        "narHash": "sha256-6zGhzaeOW8eSZD1ZVYHv/ey0PaTPDHDlYHSXv8pHKeA=",
+        "owner": "matteobongio",
+        "repo": "nixos-hardware",
+        "rev": "6707bf7e91f89f93f825dfea5ae04ca000d1dd23",
+        "type": "github"
       },
       "original": {
-        "path": "/home/matteob/nixos-hardware",
-        "type": "path"
+        "owner": "matteobongio",
+        "ref": "system76/gaze18",
+        "repo": "nixos-hardware",
+        "type": "github"
       }
     },
     "nixpkgs": {

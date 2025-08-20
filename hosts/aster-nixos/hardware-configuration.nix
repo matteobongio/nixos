@@ -72,11 +72,14 @@
       CPU_MIN_PERF_ON_BAT = 0;
       CPU_MAX_PERF_ON_BAT = 30;
 
+      TLP_DEFAULT_MODE = "BAT";
+      TLP_PERSISTENT_DEFAULT = 1;
+
       # Turbo Boost
-      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_AC = 0;
       CPU_BOOST_ON_BAT = 0;
 
-      CPU_HWP_DYN_BOOST_ON_AC = 1;
+      CPU_HWP_DYN_BOOST_ON_AC = 0;
       CPU_HWP_DYN_BOOST_ON_BAT = 0;
 
       #Optional helps save long term battery health
@@ -103,6 +106,6 @@
   };
 
   services.thermald.enable = true;
-  programs.coolercontrol.enable = true;
-  programs.coolercontrol.nvidiaSupport = true;
+  programs.coolercontrol.enable = false;
+  programs.coolercontrol.nvidiaSupport = false;
 }

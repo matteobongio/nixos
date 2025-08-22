@@ -6,14 +6,11 @@
 }: {
   imports = [
     ./print.nix
+    ./hardware.nix
     ../../WM/general.nix
     ./../../programming/virt.nix
   ];
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
   virtualisation.waydroid.enable = false;
-  hardware.graphics.enable = true;
 
   networking.hostName = "aster-nixos"; # Define your hostname.
 

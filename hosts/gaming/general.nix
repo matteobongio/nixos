@@ -74,12 +74,12 @@
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "it";
+    layout = "us";
     variant = "";
   };
 
   # Configure console keymap
-  console.keyMap = "it2";
+  # console.keyMap = "it2";
 
   services = {
     jellyfin = {
@@ -105,26 +105,26 @@
     bitwarden
   ];
 
-  xdg.desktopEntries = {
-    "sonarr-desktop" = {
-      name = "sonarr-desktop";
-      type = "Link";
-      url = "http://localhost:8989";
-      icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-    };
-    "prowlarr-desktop" = {
-      name = "prowlarr-desktop";
-      type = "Link";
-      url = "http://localhost:9696";
-      icon = "${pkgs.prowlarr}/share/prowlarr-1.36.3.5071/UI/Content/Images/logo.svg";
-    };
-     "suwayomi-desktop" = {
-      name = "suwayomi-desktop";
-      type = "Link";
-      url = "http://localhost:4567";
-      icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
-    };
-  };
+  # xdg.desktopEntries = {
+  #   "sonarr-desktop" = {
+  #     name = "sonarr-desktop";
+  #     type = "Link";
+  #     url = "http://localhost:8989";
+  #     icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
+  #   };
+  #   "prowlarr-desktop" = {
+  #     name = "prowlarr-desktop";
+  #     type = "Link";
+  #     url = "http://localhost:9696";
+  #     icon = "${pkgs.prowlarr}/share/prowlarr-1.36.3.5071/UI/Content/Images/logo.svg";
+  #   };
+  #    "suwayomi-desktop" = {
+  #     name = "suwayomi-desktop";
+  #     type = "Link";
+  #     url = "http://localhost:4567";
+  #     icon = "${pkgs.sonarr}/lib/sonarr/UI/Content/Images/logo.svg";
+  #   };
+  # };
 
   systemd.user.services.suwayomi = {
     enable = true;

@@ -141,7 +141,8 @@
   networking.firewall.allowedTCPPorts = [
     8080
     5173
-
+    
+    9998
     9999
 
     4567 #suwayomi

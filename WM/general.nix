@@ -12,8 +12,8 @@ in {
     ./niri.nix
     ./dolphin.nix
   ];
+  programs.waybar.enable = true;
   environment.systemPackages = with pkgs; [
-    waybar
     wofi
     papirus-icon-theme
     notify-desktop
@@ -78,7 +78,7 @@ in {
   services.udisks2.enable = true;
   services.gvfs.enable = true; #enable mtp
 
-  programs.hyprlock.enable = true;
+  programs.hyprlock.enable = false;
 
   xdg.portal = {
     enable = true;

@@ -149,6 +149,7 @@
     pkgs-unstable.strawberry
     handbrake
     tor-browser
+    media-downloader
   ];
   programs.direnv = {
     enable = true;

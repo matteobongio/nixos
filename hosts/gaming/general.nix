@@ -84,6 +84,7 @@
   services = {
     jellyfin = {
       enable = true;
+      openFirewall = true;
     };
     sonarr = {
       enable = true;

@@ -10,7 +10,6 @@ in {
   imports = [
     ./hyprland.nix
     ./niri.nix
-    ./dolphin.nix
   ];
   programs.waybar.enable = true;
   environment.systemPackages = with pkgs; [
@@ -28,24 +27,11 @@ in {
     brightnessctl
     networkmanagerapplet
     polkit_gnome
-    # kdePackages.plasma-systemmonitor
-    # kdePackages.ksystemstats
-    gnome-system-monitor
+    kdePackages.plasma-systemmonitor
+    kdePackages.ksystemstats
+    # gnome-system-monitor
     kdePackages.gwenview
     kdePackages.kimageformats
-    (catppuccin-kvantum.override {
-      accent = "lavender";
-      variant = "macchiato";
-    })
-    kdePackages.breeze
-    kdePackages.breeze-gtk
-    themechanger
-    nwg-look
-    qt6ct
-    libsForQt5.qt5ct
-    libsForQt5.qt5.qtwayland
-    kdePackages.qtwayland
-    kdePackages.qtstyleplugin-kvantum
   ];
 
   # environment.sessionVariables = {
@@ -74,7 +60,6 @@ in {
   };
 
   programs.dconf.enable = true;
-  services.gnome.gnome-keyring.enable = true;
   services.udisks2.enable = true;
   services.gvfs.enable = true; #enable mtp
 

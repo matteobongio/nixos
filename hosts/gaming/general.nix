@@ -7,6 +7,7 @@
   imports = [
     ./hardware-configuration.nix
     ./extra.nix
+    ./../../WM/general.nix
   ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -19,7 +20,7 @@
   hardware.nvidia.open = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/mnt/E" = {
     device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";
@@ -50,7 +51,7 @@
   #     User = "matteob";
   #   };
   # };
-  services.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = false;
 
   networking.hostName = "nixos-gaming"; # Define your hostname.
 

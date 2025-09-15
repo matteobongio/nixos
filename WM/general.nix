@@ -12,9 +12,10 @@ in {
     ./niri.nix
     ./dolphin.nix
   ];
-  programs.waybar.enable = true;
+  # programs.waybar.enable = true;
   environment.systemPackages = with pkgs; [
     wofi
+    waybar
     papirus-icon-theme
     notify-desktop
     swaynotificationcenter

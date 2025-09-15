@@ -150,6 +150,7 @@
     handbrake
     tor-browser
     media-downloader
+    sleek-todo
   ];
   programs.direnv = {
     enable = true;

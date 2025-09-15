@@ -49,10 +49,10 @@ in {
     kdePackages.qtstyleplugin-kvantum
   ];
 
-  # environment.sessionVariables = {
-  #   QT_QPA_PLATFORM = "wayland";
-  #   QT_QPA_PLATFORMTHEME = "qt6ct";
-  # };
+  environment.sessionVariables = {
+    QT_QPA_PLATFORM = "wayland";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+  };
 
   security.polkit.enable = true;
 

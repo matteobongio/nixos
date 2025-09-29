@@ -151,6 +151,7 @@
     tor-browser
     media-downloader
     sleek-todo
+    octaveFull
   ];
   programs.direnv = {
     enable = true;

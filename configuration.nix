@@ -50,6 +50,7 @@
   services.displayManager.sddm.wayland.enable = true;
 
   programs.kdeconnect.enable = true;
+  programs.localsend.enable = true;
 
   environment.sessionVariables = {
     # If your cursor becomes invisible
@@ -152,6 +153,8 @@
     media-downloader
     sleek-todo
     octaveFull
+    muse
+    zip
   ];
   programs.direnv = {
     enable = true;

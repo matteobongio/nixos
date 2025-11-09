@@ -13,7 +13,7 @@
     kdePackages.kio-admin
     kdePackages.kio-gdrive
     kdePackages.kio-extras
-    pkgs-unstable.kdePackages.dolphin
+    kdePackages.dolphin
     kdePackages.kservice
     kdePackages.kdegraphics-thumbnailers
     kdePackages.ark

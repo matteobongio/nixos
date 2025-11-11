@@ -9,9 +9,9 @@
     typst.enable = lib.mkEnableOption "enable typst packages";
   };
   config = lib.mkIf config.typst.enable {
-    environment.systemPackages = [
-      pkgs-unstable.typst
-      pkgs-unstable.tinymist
+    environment.systemPackages = with pkgs; [
+      typst
+      tinymist
     ];
   };
 }

@@ -28,6 +28,8 @@
       valgrind
       jq
       just
+      rclone
+      rsync
 
       godot_4
       jetbrains.clion

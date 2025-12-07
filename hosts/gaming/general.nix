@@ -104,7 +104,7 @@
     jellyfin-web
     jellyfin-ffmpeg
     jellyfin-media-player
-    bitwarden
+    bitwarden-desktop
   ];
 
   # xdg.desktopEntries = {

@@ -147,7 +147,7 @@
     obsidian
     #wonderdraft
     nicotine-plus
-    pkgs-unstable.strawberry
+    strawberry
     handbrake
     tor-browser
     media-downloader

@@ -20,7 +20,7 @@ in {
   };
   config = lib.mkIf config.neovim.enable {
     programs.nix-ld.enable = true; # allow for clangd dynamic linked libraries
-    programs.nix-ld.package = pkgs.nix-ld-rs;
+    # programs.nix-ld.package = pkgs.nix-ld-rs;
     programs.nix-ld.libraries = with pkgs; [stdenv.cc.cc];
     environment.sessionVariables = {
       EDITOR = "nvim";

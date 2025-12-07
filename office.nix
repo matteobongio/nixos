@@ -5,7 +5,7 @@
   ...
 }: {
   environment.systemPackages = with pkgs; [
-    onlyoffice-bin_latest
+    onlyoffice-desktopeditors
     slack
   ];
 }

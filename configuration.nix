@@ -146,7 +146,7 @@
     gimp
     obsidian
     #wonderdraft
-    soulseekqt
+    nicotine-plus
     pkgs-unstable.strawberry
     handbrake
     tor-browser

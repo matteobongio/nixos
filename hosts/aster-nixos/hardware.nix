@@ -67,6 +67,6 @@
   };
 
   services.thermald.enable = true;
-  programs.coolercontrol.enable = false;
-  programs.coolercontrol.nvidiaSupport = false;
+  # programs.coolercontrol.enable = false;
+  # programs.coolercontrol.nvidiaSupport = false;
 }

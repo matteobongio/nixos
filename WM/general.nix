@@ -42,7 +42,7 @@ in {
     kdePackages.breeze-gtk
     themechanger
     nwg-look
-    qt6ct
+    qt6Packages.qt6ct
     libsForQt5.qt5ct
     libsForQt5.qt5.qtwayland
     kdePackages.qtwayland

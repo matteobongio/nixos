@@ -103,7 +103,7 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
-    jellyfin-media-player
+    pkgs-unstable.jellyfin-media-player
     bitwarden-desktop
   ];
 

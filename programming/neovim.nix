@@ -2,19 +2,9 @@
   config,
   lib,
   pkgs,
-  pkgs-unstable,
   ...
 }:
-# TODO: delete when https://github.com/NixOS/nixpkgs/issues/402998 is closed
-let
-  nvim = pkgs-unstable.neovim-unwrapped.overrideAttrs (old: {
-    meta =
-      old.meta or {}
-      // {
-        maintainers = [];
-      };
-  });
-in {
+{
   options = {
     neovim.enable = lib.mkEnableOption "enable neovim packages";
   };
@@ -29,7 +19,6 @@ in {
       enable = true;
       defaultEditor = true;
       viAlias = true;
-      package = nvim;
     };
     environment.systemPackages = with pkgs; [
       tree-sitter

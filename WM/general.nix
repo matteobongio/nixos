@@ -11,6 +11,7 @@ in {
     ./hyprland.nix
     ./niri.nix
     ./dolphin.nix
+    ./quickshell.nix
   ];
   # programs.waybar.enable = true;
   environment.systemPackages = with pkgs; [

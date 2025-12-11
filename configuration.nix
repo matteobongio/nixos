@@ -115,7 +115,7 @@
     pkgs-unstable.joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
-    (pkgs-unstable.calibre.override {
+    (calibre.override {
       unrarSupport = true; #cbr and cbz
     })
     discord

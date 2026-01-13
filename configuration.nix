@@ -144,6 +144,7 @@
     qdirstat
     krita
     gimp
+    pinta
     obsidian
     #wonderdraft
     nicotine-plus

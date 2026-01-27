@@ -20,7 +20,7 @@
   hardware.nvidia.open = true;
 
   # Use latest kernel.
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   fileSystems."/mnt/E" = {
     device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";

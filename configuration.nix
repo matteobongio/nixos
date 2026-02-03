@@ -4,7 +4,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -115,7 +114,7 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     thunderbird
-    pkgs-unstable.joplin-desktop
+    joplin-desktop
     protonmail-bridge-gui
     protonvpn-gui
     (calibre.override {

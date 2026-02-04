@@ -33,7 +33,7 @@
 
       godot_4
       jetbrains.clion
-      jetbrains.idea-ultimate
+      jetbrains.idea
 
       alejandra
 

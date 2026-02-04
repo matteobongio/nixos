@@ -96,6 +96,11 @@
       enable = true;
     };
     flaresolverr.enable = true;
+    nix-serve = {
+      enable = true;
+      secretKeyFile = "../../secrets/cache-priv-key.pem";
+      openFirewall = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -143,7 +148,7 @@
   networking.firewall.allowedTCPPorts = [
     8080
     5173
-    
+
     9998
     9999
 

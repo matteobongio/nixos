@@ -1,7 +1,6 @@
 {
   config,
   pkgs,
-  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -108,7 +107,7 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
-    pkgs-unstable.jellyfin-media-player
+    jellyfin-media-player
     bitwarden-desktop
   ];
 

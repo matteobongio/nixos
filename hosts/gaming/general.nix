@@ -44,6 +44,19 @@
     ];
     depends = ["/"];
   };
+
+
+  fileSystems."/mnt/Z" = {
+    device = "/dev/disk/by-uuid/36475945-32c0-465f-8d37-d6c987a6729f";
+    fsType = "btrfs";
+    options = [
+      "defaults"
+      "nofail"
+      "compress=zstd"
+      "autodefrag"
+    ];
+    depends = ["/"];
+  };
   # services.displayManager.sddm.settings = {
   #   Autologin = {
   #     Session = "plasma.desktop";

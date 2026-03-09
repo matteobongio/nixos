@@ -19,19 +19,19 @@
   hardware.nvidia.open = true;
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
-  fileSystems."/mnt/E" = {
-    device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";
-    fsType = "btrfs";
-    options = [
-      "defaults"
-      "nofail"
-      "compress=zstd"
-      "autodefrag"
-    ];
-    depends = ["/"];
-  };
+  # fileSystems."/mnt/E" = {
+  #   device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";
+  #   fsType = "btrfs";
+  #   options = [
+  #     "defaults"
+  #     "nofail"
+  #     "compress=zstd"
+  #     "autodefrag"
+  #   ];
+  #   depends = ["/"];
+  # };
 
   fileSystems."/mnt/D" = {
     device = "/dev/disk/by-uuid/e1dad93f-07c6-414c-ab7a-479defa2a672";

@@ -6,6 +6,8 @@
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:matteobongio/nixos-hardware/system76/gaze18"; # "github:NixOS/nixos-hardware/master";
     go2pkg.url = "github:matteobongio/go2";
+    nf.url = "gitlab:MatteoBongio/nf";
+    nf.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -14,6 +16,7 @@
     nixpkgs-unstable,
     nixos-hardware,
     go2pkg,
+    nf,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -44,6 +47,7 @@
         {
           environment.systemPackages = [
             go2pkg.packages.${system}.default
+            nf.packages.${system}.default
           ];
         }
       ];

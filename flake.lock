@@ -18,6 +18,26 @@
         "type": "github"
       }
     },
+    "nf": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1771619646,
+        "narHash": "sha256-6DqcIFyHz/a/Qlhkn8hcZeCuSgOaXa43cUhTTvDQiDc=",
+        "owner": "MatteoBongio",
+        "repo": "nf",
+        "rev": "f07b1a6d6914c93347534d37f35a2c651015e061",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "MatteoBongio",
+        "repo": "nf",
+        "type": "gitlab"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1755610045,
@@ -85,6 +105,7 @@
     "root": {
       "inputs": {
         "go2pkg": "go2pkg",
+        "nf": "nf",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-unstable": "nixpkgs-unstable"

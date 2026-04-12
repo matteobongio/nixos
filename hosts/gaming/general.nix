@@ -33,6 +33,8 @@
   #   depends = ["/"];
   # };
 
+  services.fstrim.enable = true;
+
   fileSystems."/mnt/D" = {
     device = "/dev/disk/by-uuid/e1dad93f-07c6-414c-ab7a-479defa2a672";
     fsType = "btrfs";

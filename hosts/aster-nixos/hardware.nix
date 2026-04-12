@@ -12,6 +12,20 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  fileSystems."/mnt/D" = {
+    device = "/dev/disk/by-uuid/bfcc703f-9a95-46ab-a4de-e8d0f3220caa";
+    fsType = "btrfs";
+    options = [
+      "defaults"
+      "nofail"
+      "compress=zstd"
+    ];
+    depends = ["/"];
+  };
+
+  services.fstrim.enable = true;
+
+
   hardware.graphics.enable = true;
 
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18.system76;

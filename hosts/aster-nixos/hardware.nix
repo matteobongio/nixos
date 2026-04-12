@@ -14,7 +14,7 @@
 
   hardware.graphics.enable = true;
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18.system76;
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18.system76;
 
   # services.system76-scheduler.enable = true;
   # services.system76-scheduler.useStockConfig = true;

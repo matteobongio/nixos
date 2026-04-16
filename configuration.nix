@@ -158,6 +158,7 @@
     octaveFull
     muse
     zip
+    wifi-qr
   ];
   programs.direnv = {
     enable = true;

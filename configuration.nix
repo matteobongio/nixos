@@ -48,9 +48,9 @@
   #     default_session = initial_session;
   #   };
   # };
-  programs.regreet.enable = true;
-  # services.displayManager.sddm.enable = true;
-  # services.displayManager.sddm.wayland.enable = true;
+  # programs.regreet.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
 
   programs.kdeconnect.enable = true;
   programs.localsend.enable = true;

@@ -110,11 +110,11 @@
       enable = true;
     };
     flaresolverr.enable = true;
-    nix-serve = {
-      enable = true;
-      secretKeyFile = "../../secrets/cache-priv-key.pem";
-      openFirewall = true;
-    };
+    # nix-serve = {
+    #   enable = true;
+    #   secretKeyFile = "../../secrets/cache-priv-key.pem";
+    #   openFirewall = true;
+    # };
   };
 
   environment.systemPackages = with pkgs; [

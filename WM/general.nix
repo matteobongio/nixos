@@ -24,7 +24,7 @@ in {
     swww
     eww
     waypaper
-    pamixer
+    # pamixer //TODO: move to wpctl
     pwvucontrol
     brightnessctl
     networkmanagerapplet

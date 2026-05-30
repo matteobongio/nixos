@@ -48,8 +48,8 @@
   #     default_session = initial_session;
   #   };
   # };
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
+  # services.displayManager.sddm.enable = true;
+  # services.displayManager.sddm.wayland.enable = true;
 
   programs.kdeconnect.enable = true;
   programs.localsend.enable = true;

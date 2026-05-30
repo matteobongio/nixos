@@ -48,20 +48,20 @@
   #     default_session = initial_session;
   #   };
   # };
-  # programs.regreet.enable = true;
+  programs.regreet.enable = true;
   # services.displayManager.sddm.enable = true;
   # services.displayManager.sddm.wayland.enable = true;
 
   programs.kdeconnect.enable = true;
   programs.localsend.enable = true;
 
-  environment.sessionVariables = {
-    # If your cursor becomes invisible
-    #WLR_NO_HARDWARE_CURSORS = "1";
-    # Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-    GSK_RENDERER = "gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
-  };
+  # environment.sessionVariables = {
+  #   # If your cursor becomes invisible
+  #   #WLR_NO_HARDWARE_CURSORS = "1";
+  #   # Hint electron apps to use wayland
+  #   NIXOS_OZONE_WL = "1";
+  #   GSK_RENDERER = "gl"; #fixes some gnome apps on wayland ? https://discussion.fedoraproject.org/t/gdk-message-error-71-protocol-error-dispatching-to-wayland-display/127927/6
+  # };
 
   # Enable sound with pipewire.
   # services.pulseaudio.enable = false;

@@ -46,6 +46,7 @@ in {
     libsForQt5.qt5ct
     libsForQt5.qt5.qtwayland
     kdePackages.qtwayland
+    wofi
   ];
 
   environment.sessionVariables = {

@@ -17,6 +17,7 @@
     mangohud
     protonup-ng
     prismlauncher
+    limo
     #lutris
     heroic
     melonDS

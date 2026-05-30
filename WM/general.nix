@@ -14,14 +14,13 @@ in {
   ];
   # programs.waybar.enable = true;
   environment.systemPackages = with pkgs; [
-    wofi
     waybar
     papirus-icon-theme
     notify-desktop
     swaynotificationcenter
     hypridle
     hyprshot
-    swww
+    awww
     eww
     waypaper
     # pamixer //TODO: move to wpctl
@@ -34,10 +33,10 @@ in {
     gnome-system-monitor
     kdePackages.gwenview
     kdePackages.kimageformats
-    (catppuccin-kvantum.override {
-      accent = "lavender";
-      variant = "macchiato";
-    })
+    # (catppuccin-kvantum.override {
+    #   accent = "lavender";
+    #   variant = "macchiato";
+    # })
     kdePackages.breeze
     kdePackages.breeze-gtk
     themechanger
@@ -47,7 +46,6 @@ in {
     libsForQt5.qt5ct
     libsForQt5.qt5.qtwayland
     kdePackages.qtwayland
-    kdePackages.qtstyleplugin-kvantum
   ];
 
   environment.sessionVariables = {
@@ -58,22 +56,22 @@ in {
   security.polkit.enable = true;
 
   # environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
-  systemd = {
-    user.services.polkit-gnome-authentication-agent-1 = {
-      enable = true;
-      description = "polkit-gnome-authentication-agent-1";
-      wantedBy = ["graphical-session.target"];
-      wants = ["graphical-session.target"];
-      after = ["graphical-session.target"];
-      serviceConfig = {
-        Type = "simple";
-        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-        Restart = "on-failure";
-        RestartSec = 1;
-        TimeoutStopSec = 10;
-      };
-    };
-  };
+  # systemd = {
+  #   user.services.polkit-gnome-authentication-agent-1 = {
+  #     enable = true;
+  #     description = "polkit-gnome-authentication-agent-1";
+  #     wantedBy = ["graphical-session.target"];
+  #     wants = ["graphical-session.target"];
+  #     after = ["graphical-session.target"];
+  #     serviceConfig = {
+  #       Type = "simple";
+  #       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+  #       Restart = "on-failure";
+  #       RestartSec = 1;
+  #       TimeoutStopSec = 10;
+  #     };
+  #   };
+  # };
 
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;

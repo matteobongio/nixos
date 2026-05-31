@@ -55,6 +55,12 @@
       nixos-gaming = mkSystem [
         ./configuration.nix
         ./hosts/gaming/general.nix
+        {
+          environment.systemPackages = [
+            go2pkg.packages.${system}.default
+            nf.packages.${system}.default
+          ];
+        }
       ];
       aster-lab = mkSystem [
         ./hosts/aster-lab/general.nix

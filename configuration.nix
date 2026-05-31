@@ -117,7 +117,7 @@
     thunderbird
     joplin-desktop
     protonmail-bridge-gui
-    protonvpn-gui
+    proton-vpn
     (calibre.override {
       unrarSupport = true; #cbr and cbz
     })

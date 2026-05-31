@@ -20,7 +20,7 @@
     limo
     #lutris
     heroic
-    melonDS
+    melonds
     gzdoom
     wine
     winetricks

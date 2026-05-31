@@ -49,9 +49,10 @@ in {
     wofi
   ];
 
+  environment.pathsToLink = [ "/share/color-schemes" ];
   environment.sessionVariables = {
-    QT_QPA_PLATFORM = "wayland";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
   };
 
   security.polkit.enable = true;

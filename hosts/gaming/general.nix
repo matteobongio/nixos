@@ -26,7 +26,7 @@
   };
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
   # fileSystems."/mnt/E" = {
   #   device = "/dev/disk/by-uuid/7a1ab3cb-5263-4c31-83b6-2efefc19e82b";
@@ -125,7 +125,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    suwayomi-server
+    # suwayomi-server
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
@@ -154,16 +154,16 @@
   #   };
   # };
 
-  systemd.user.services.suwayomi = {
-    enable = true;
-    after = ["network.target"];
-    wantedBy = ["default.target"];
-    description = "suwayomi server";
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ''"${pkgs.suwayomi-server}/bin/tachidesk-server"'';
-    };
-  };
+  # systemd.user.services.suwayomi = {
+  #   enable = true;
+  #   after = ["network.target"];
+  #   wantedBy = ["default.target"];
+  #   description = "suwayomi server";
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = ''"${pkgs.suwayomi-server}/bin/tachidesk-server"'';
+  #   };
+  # };
 
   # Open ports in the firewall.
   networking.firewall.allowedTCPPorts = [
@@ -173,7 +173,7 @@
     9998
     9999
 
-    4567 #suwayomi
+    # 4567 #suwayomi
   ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   networking.firewall.allowedUDPPorts = [22000 21027]; #syncthing

@@ -110,8 +110,8 @@
     };
     sonarr = {
       enable = true;
-      user = "matteob";
-      dataDir = "/home/matteob/.config/NzbDrone";
+      # user = "matteob";
+      # dataDir = "/home/matteob/.config/NzbDrone";
     };
     prowlarr = {
       enable = true;
@@ -129,7 +129,8 @@
     jellyfin
     jellyfin-web
     jellyfin-ffmpeg
-    jellyfin-media-player
+    jellyfin-desktop
+    fladder
     # bitwarden-desktop
   ];
 

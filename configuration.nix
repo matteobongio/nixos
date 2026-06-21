@@ -91,7 +91,7 @@
   users.users.matteob = {
     isNormalUser = true;
     description = "Matteo Bongiovanni";
-    extraGroups = ["networkmanager" "wheel" "input"];
+    extraGroups = ["networkmanager" "wheel" "input" "docker"];
     packages = with pkgs; [
       kdePackages.kate
       kdePackages.kweather

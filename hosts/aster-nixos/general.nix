@@ -7,6 +7,7 @@
     ./print.nix
     ./hardware.nix
     ../../WM/general.nix
+    ../../WM/hypridle.nix
     ./../../programming/virt.nix
   ];
   virtualisation.waydroid.enable = false;

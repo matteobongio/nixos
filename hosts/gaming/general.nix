@@ -7,23 +7,12 @@
     ./hardware-configuration.nix
     ./extra.nix
     ./../../WM/general.nix
+    ./../../nvidia.nix
   ];
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #nvidia
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = true;
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "nvidia";
-    XDG_SESSION_TYPE = "wayland";
-    GBM_BACKEND = "nvidia-drm";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    NVD_BACKEND = "direct";
-  };
 
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;

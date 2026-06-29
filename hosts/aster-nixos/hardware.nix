@@ -12,6 +12,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+  };
+
+
+  imports = [
+    ./../../nvidia.nix
+  ];
+
   fileSystems."/mnt/D" = {
     device = "/dev/disk/by-uuid/bfcc703f-9a95-46ab-a4de-e8d0f3220caa";
     fsType = "btrfs";
@@ -85,14 +94,14 @@
     STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
   };
 
-  services.auto-cpufreq.settings = {
-    battery = {
-       governor = "powersave";
-       turbo = "never";
-    };
-    charger = {
-       governor = "performance";
-       turbo = "auto";
-    };
-  };
+  # services.auto-cpufreq.settings = {
+  #   battery = {
+  #      governor = "powersave";
+  #      turbo = "never";
+  #   };
+  #   charger = {
+  #      governor = "performance";
+  #      turbo = "auto";
+  #   };
+  # };
 }

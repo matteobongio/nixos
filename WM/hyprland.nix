@@ -12,6 +12,6 @@
     xwayland.enable = true;
   };
   environment.systemPackages = with pkgs; [
-    hyprlauncher
+    # hyprlauncher
   ];
 }

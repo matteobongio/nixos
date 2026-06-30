@@ -52,28 +52,10 @@ in {
   environment.pathsToLink = [ "/share/color-schemes" ];
   environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland;xcb";
-    QT_QPA_PLATFORMTHEME = "qt5ct";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
   };
 
   security.polkit.enable = true;
-
-  # environment.pathsToLink = [ "${pkgs.kdePackages.polkit-kde-agent-1}/libexec" ];
-  # systemd = {
-  #   user.services.polkit-gnome-authentication-agent-1 = {
-  #     enable = true;
-  #     description = "polkit-gnome-authentication-agent-1";
-  #     wantedBy = ["graphical-session.target"];
-  #     wants = ["graphical-session.target"];
-  #     after = ["graphical-session.target"];
-  #     serviceConfig = {
-  #       Type = "simple";
-  #       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  #       Restart = "on-failure";
-  #       RestartSec = 1;
-  #       TimeoutStopSec = 10;
-  #     };
-  #   };
-  # };
 
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;
@@ -84,9 +66,18 @@ in {
 
   xdg.portal = {
     enable = true;
-    config.common.default = "*";
+    # config.common.default = "*";
     # wlr.enable = true;
     xdgOpenUsePortal = true;
-    extraPortals = portals;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-hyprland
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+    ];
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = ["hyprland" "gtk"];
+      niri.default = ["gnome" "gtk"];
+    };
   };
 }

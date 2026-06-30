@@ -27,7 +27,8 @@ in {
     pwvucontrol
     brightnessctl
     networkmanagerapplet
-    polkit_gnome
+    # polkit_gnome
+    hyprpolkitagent
     # kdePackages.plasma-systemmonitor
     # kdePackages.ksystemstats
     gnome-system-monitor
@@ -56,6 +57,18 @@ in {
   };
 
   security.polkit.enable = true;
+  systemd.user.services.hyprpolkitagent = {
+    description = "Hyprland PolicyKit Agent";
+    wantedBy = ["graphical-session.target"];
+    partOf = ["graphical-session.target"];
+    after = ["graphical-session.target"];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.hyprpolkitagent}/bin/hyprpolkitagent";
+      Restart = "on-failure";
+      RestartSec = 1;
+    };
+  };
 
   programs.dconf.enable = true;
   services.gnome.gnome-keyring.enable = true;

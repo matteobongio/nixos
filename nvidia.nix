@@ -6,10 +6,7 @@
 }: {
 
   #nvidia
-  hardware.graphics.enable = true;
-  hardware.graphics.enable32Bit = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.open = true;
+  hardware.nvidia.modesetting.enable = true;
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "nvidia";
     XDG_SESSION_TYPE = "wayland";

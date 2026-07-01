@@ -13,6 +13,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.open = true;
 
   # Use latest kernel.
   # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;

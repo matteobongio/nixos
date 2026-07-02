@@ -49,6 +49,7 @@
   services.power-profiles-daemon.enable = false;
   services.auto-cpufreq.enable = false;
   services.tlp.enable = true;
+  systemd.services.system76-power.enable = false;
 
   powerManagement.enable = true;
   services.upower.enable = true;
@@ -91,7 +92,7 @@
 
     #Optional helps save long term battery health
     START_CHARGE_THRESH_BAT0 = 70; # 50 and bellow it starts to charge
-    STOP_CHARGE_THRESH_BAT0 = 90; # 90 and above it stops charging
+    STOP_CHARGE_THRESH_BAT0 = 80; # 90 and above it stops charging
   };
 
   # services.auto-cpufreq.settings = {

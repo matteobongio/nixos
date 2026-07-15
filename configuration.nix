@@ -160,6 +160,7 @@
     muse
     zip
     wifi-qr
+    subsurface
   ];
   programs.direnv = {
     enable = true;

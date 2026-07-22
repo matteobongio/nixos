@@ -12,10 +12,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-  };
-
+  # services.logind.settings.Login = {
+  #   HandleLidSwitch = "suspend";
+  # };
 
   imports = [
     ./../../nvidia.nix
@@ -93,6 +92,7 @@
     #Optional helps save long term battery health
     START_CHARGE_THRESH_BAT0 = 70; # 50 and bellow it starts to charge
     STOP_CHARGE_THRESH_BAT0 = 80; # 90 and above it stops charging
+    RESTORE_THRESH_AFTER_SUSPEND = 1;
   };
 
   # services.auto-cpufreq.settings = {

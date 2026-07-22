@@ -116,6 +116,7 @@
   environment.systemPackages = with pkgs; [
     thunderbird
     joplin-desktop
+    appflowy
     protonmail-bridge-gui
     proton-vpn
     (calibre.override {
